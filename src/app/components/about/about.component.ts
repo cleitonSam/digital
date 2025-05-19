@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AboutComponent {
   // Você pode adicionar seus clientes como array se quiser fazer binding
   clients = [
-    { name: 'Academia Premium', logo: 'assets/images/clients/premium.png' },
+    { name: 'Academia Premium', logo: 'https://i.imgur.com/P0WgRk7.png' },
     { name: ' Total', logo: 'assets/images/clients/-total.png' },
     { name: 'Gym Evolution', logo: 'assets/images/clients/gym-evolution.png' },
     { name: 'Power Club', logo: 'assets/images/clients/power-club.png' },
