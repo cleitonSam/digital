@@ -1,3 +1,4 @@
+/* ===== VARIÁVEIS ===== */
 $primary: #0066ff;
 $primary-dark: #0052cc;
 $secondary: #00f2fe;
@@ -10,15 +11,22 @@ $success: #10b981;
 
 $gradient: linear-gradient(135deg, $primary, $secondary);
 
-/* Global Styles */
+/* ===== TIPOGRAFIA ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== ESTILOS GLOBAIS ===== */
 body {
   background-color: $light;
   color: $dark;
   line-height: 1.6;
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+/* ===== ESTRUTURA ===== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -26,13 +34,18 @@ body {
 }
 
 .section {
-  padding: 70px 0;
+  padding: 100px 0;
+  
+  @media (max-width: 768px) {
+    padding: 80px 0;
+  }
   
   @media (max-width: 576px) {
-    padding: 80px 0;
+    padding: 60px 0;
   }
 }
 
+/* ===== COMPONENTES ===== */
 .section-title {
   text-align: center;
   margin-bottom: 70px;
@@ -41,9 +54,10 @@ body {
     font-size: 42px;
     color: $dark;
     margin-bottom: 20px;
-    font-weight: 800;
+    font-weight: 700;
     position: relative;
     display: inline-block;
+    font-family: 'Poppins', sans-serif;
 
     &:after {
       content: '';
@@ -63,24 +77,28 @@ body {
     max-width: 700px;
     margin: 0 auto;
     font-size: 18px;
+    font-weight: 400;
   }
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 32px;
   background: $gradient;
   color: white;
   border: none;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
   font-size: 15px;
   box-shadow: 0 4px 15px rgba($primary, 0.3);
   position: relative;
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 
   &:hover {
     transform: translateY(-3px);
@@ -97,6 +115,7 @@ body {
     background: linear-gradient(135deg, $primary-dark, $secondary-dark);
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 0;
   }
 
   &:hover:after {
@@ -122,13 +141,13 @@ body {
   }
 }
 
-/* Animations */
+/* ===== ANIMAÇÕES ===== */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-15px);
   }
 }
 
@@ -136,38 +155,50 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .hero h1 {
-    font-size: 48px;
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 40px;
   }
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 40px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
+@media (max-width: 992px) {
   .section-title h2 {
     font-size: 36px;
   }
 }
 
-@media (max-width: 576px) {
-  .hero h1 {
+@media (max-width: 768px) {
+  .container {
+    padding: 0 30px;
+  }
+  
+  .section-title h2 {
     font-size: 32px;
   }
-
-  .section-title h2 {
-    font-size: 30px;
+  
+  .section-title p {
+    font-size: 16px;
   }
 }
 
-/* reset.scss */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .section-title h2 {
+    font-size: 28px;
+  }
+  
+  .btn, .btn-outline {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* ===== RESET ===== */
 *,
 *::before,
 *::after {
@@ -176,21 +207,32 @@ body {
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  font-family: sans-serif;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
 }
 
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 input, button, textarea, select {
   font: inherit;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Melhoria de acessibilidade para foco */
+:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 4px;
 }
