@@ -1,0 +1,18 @@
+<section id="services" class="section services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Digital Fluxo & Tech</h2>
+        <p>Tecnologia integrada para todos os aspectos da gestão da sua empresa</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services">
+          <i [class]="service.icon"></i>
+          <h3>{{service.title}}</h3>
+          <ul>
+            <li *ngFor="let item of service.items">{{item}}</li>
+          </ul>
+          <a [href]="service.link" class="btn" target="_blank">{{service.linkText}}</a>
+        </div>
+      </div>
+    </div>
+  </section>

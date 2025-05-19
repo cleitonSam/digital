@@ -1,0 +1,40 @@
+$primary: #0066ff;
+$primary-dark: #0052cc;
+$secondary: #00f2fe;
+$secondary-dark: #00d9e6;
+$dark: #0f172a;
+$darker: #020617;
+$light: #f8fafc;
+$gray: #94a3b8;
+$success: #10b981;
+
+$gradient: linear-gradient(135deg, $primary, $secondary);
+
+.cta {
+  background: linear-gradient(rgba($darker, 0.95), rgba($darker, 0.98)), 
+              url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 120px 0;
+  position: relative;
+
+  h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $gray;
+  }
+
+  .highlight {
+    color: $secondary;
+    font-weight: 700;
+  }
+}

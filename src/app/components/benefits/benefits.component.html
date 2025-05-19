@@ -1,0 +1,16 @@
+<section id="benefits" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Benefícios para Sua Empresa</h2>
+        <p>Como nossas soluções impactam positivamente seu negócio</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card" *ngFor="let benefit of benefits">
+          <i [class]="benefit.icon"></i>
+          <h3>{{benefit.title}}</h3>
+          <p>{{benefit.description}}</p>
+          <img src="../../../assets/images/LogoFluxoVetor.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>

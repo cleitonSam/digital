@@ -1,0 +1,92 @@
+$primary: #0066ff;
+$primary-dark: #0052cc;
+$secondary: #00f2fe;
+$secondary-dark: #00d9e6;
+$dark: #0f172a;
+$darker: #020617;
+$light: #f8fafc;
+$gray: #94a3b8;
+$success: #10b981;
+
+$gradient: linear-gradient(135deg, $primary, $secondary);
+
+.methodology {
+  background: $darker;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  .section-title h2,
+  .section-title p {
+    color: white;
+    position: relative;
+  }
+}
+
+.methodology-steps {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $secondary;
+    border-radius: 10px;
+  }
+}
+
+.step {
+  min-width: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+  }
+}
+
+.step-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: $gradient;
+  color: $dark;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.step h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}

@@ -1,0 +1,123 @@
+$primary: #0066ff;
+$primary-dark: #0052cc;
+$secondary: #00f2fe;
+$secondary-dark: #00d9e6;
+$dark: #0f172a;
+$darker: #020617;
+$light: #f8fafc;
+$gray: #94a3b8;
+$success: #10b981;
+
+$gradient: linear-gradient(135deg, $primary, $secondary);
+
+
+
+.hero {
+  background: linear-gradient(rgba($darker, 0.9), rgba($darker, 0.95)), 
+              url('https://i.imgur.com/Cnj2Gvd.png') no-repeat center center/cover;
+  height: 60vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    min-height: 700px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(0, 245, 255, 0.1) 0%, transparent 30%),
+      radial-gradient(circle at 80% 70%, rgba(138, 43, 226, 0.1) 0%, transparent 30%);
+    z-index: 1;
+  }
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  font-weight: 800;
+  background: linear-gradient(90deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  @media (max-width: 992px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 32px;
+  }
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  color: $gray;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Adicione estas animações */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes neon-glow {
+  0%, 100% { text-shadow: 0 0 5px $secondary, 0 0 10px $secondary; }
+  50% { text-shadow: 0 0 10px $primary, 0 0 20px $primary; }
+}
+
+.btn {
+  animation: neon-glow 3s infinite alternate;
+}

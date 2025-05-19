@@ -1,0 +1,15 @@
+<section id="methodology" class="section methodology">
+    <div class="container">
+      <div class="section-title">
+        <h2>Metodologia Digital</h2>
+        <p>Nosso processo para transformar sua empresa digitalmente</p>
+      </div>
+      <div class="methodology-steps">
+        <div class="step" *ngFor="let step of steps">
+          <div class="step-number">{{step.number}}</div>
+          <h3>{{step.title}}</h3>
+          <p>{{step.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
