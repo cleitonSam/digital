@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { CtaComponent } from './components/cta/cta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
