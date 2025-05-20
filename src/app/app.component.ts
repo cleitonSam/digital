@@ -10,20 +10,7 @@ import { IntegrationsComponent } from './components/integrations/integrations.co
 import { MethodologyComponent } from './components/methodology/methodology.component';
 import { ServicesComponent } from './components/services/services.component';
 
-// src/typings.d.ts
-interface Window {
-  chatwootSettings?: {
-    position: string;
-    type: string;
-    launcherTitle: string;
-  };
-  chatwootSDK?: {
-    run: (config: {
-      websiteToken: string;
-      baseUrl: string;
-    }) => void;
-  };
-}
+
 
 @Component({
   selector: 'app-root',
@@ -33,7 +20,7 @@ interface Window {
   standalone: true
 })
 export class AppComponent implements OnInit {
-  title = 'digital-fluxo-tech';
+ title = 'digital-fluxo-tech';
 
   constructor(private renderer: Renderer2) {}
 
@@ -42,23 +29,29 @@ export class AppComponent implements OnInit {
   }
 
   private loadChatwootScript(): void {
-    // Definindo as configurações do Chatwoot no objeto window
-    (window as any).chatwootSettings = {
+    // Verifique se o script já foi carregado
+    if (document.querySelector('script[src*="chat.fluxodigitaltech.com.br"]')) {
+      return;
+    }
+
+    // Configurações do Chatwoot
+    window.chatwootSettings = {
       position: 'right',
       type: 'standard',
       launcherTitle: 'Fale conosco no chat'
     };
 
     const script = this.renderer.createElement('script');
-    script.src = 'https://chat.fluxodigitaltech.com.br/packs/js/sdk.js';
+    script.src = 'https://canal.fluxodigitaltech.com.br/packs/js/sdk.js';
     script.defer = true;
     script.async = true;
     
     script.onload = () => {
-      if ((window as any).chatwootSDK) {
-        (window as any).chatwootSDK.run({
+      if (window.chatwootSDK) {
+        window.chatwootSDK.run({
           websiteToken: 'qSbYYAQDt5hj2xVazaWCQ1yU',
-          baseUrl: 'https://chat.fluxodigitaltech.com.br'
+          baseUrl: 'https://canal.fluxodigitaltech.com.br',
+          containerId: 'chatwoot-container' // Adicione esta linha
         });
       }
     };

@@ -20,3 +20,14 @@
 .whatsapp-float:hover {
   transform: scale(1.08);
 }
+
+/* No seu styles.css global */
+#chatwoot-container .chatwoot-launcher {
+  background: #4E8CFF !important;
+  border-radius: 50px !important;
+  padding: 8px 15px !important;
+}
+
+#chatwoot-container .chatwoot-launcher-icon {
+  margin-right: 5px !important;
+}
