@@ -1,0 +1,22 @@
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 100px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366; /* Cor oficial do WhatsApp */
+  color: #FFF;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
