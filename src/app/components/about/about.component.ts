@@ -10,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
   clients = [
     { name: 'Academia Premium', logo: 'https://i.imgur.com/lN0LTy9.jpeg' },
-    { name: 'Fitness Total', logo: 'https://via.placeholder.com/150x80?text=Fitness+Total' },
-    { name: 'Gym Evolution', logo: 'https://via.placeholder.com/150x80?text=Gym+Evolution' },
-    { name: 'Power Club', logo: 'https://via.placeholder.com/150x80?text=Power+Club' },
-    { name: 'Body Tech', logo: 'https://via.placeholder.com/150x80?text=Body+Tech' },
-    { name: 'Smart Fit', logo: 'https://via.placeholder.com/150x80?text=Smart+Fit' },
-    { name: 'Bio Ritmo', logo: 'https://via.placeholder.com/150x80?text=Bio+Ritmo' },
-    { name: 'Blue Fitness', logo: 'https://via.placeholder.com/150x80?text=Blue+Fitness' }
+    { name: 'Fitness Total', logo: 'https://i.imgur.com/flQuzEs.png' },
+    { name: 'Gym Evolution', logo: 'https://i.imgur.com/gKYAGiY.png' },
+    { name: 'Power Club', logo: 'https://i.imgur.com/Nm0hyK5.png' },
+    { name: 'Body Tech', logo: 'https://i.imgur.com/Jc0OiiJ.png' },
+    { name: 'Smart Fit', logo: 'https://i.imgur.com/UJWueVv.png' },
+    { name: 'Bio Ritmo', logo: 'https://i.imgur.com/gm8QORO.png' },
+    { name: 'Blue Fitness', logo: 'https://i.imgur.com/GHG39rh.png' },
+    { name: 'Blue Fitness', logo: 'https://i.imgur.com/GdOU1P4.png' },
+    { name: 'Blue Fitness', logo: 'https://i.imgur.com/k9AL8hI.png' }
   ];
 
   duplicatedClients: any[] = [];
