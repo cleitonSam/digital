@@ -21,7 +21,7 @@ export class ServicesComponent {
         'Acesso remoto e em tempo real'
       ],
       link: 'https://app.storminnovation.com.br',
-      linkText: 'Experimente'
+      linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-globe',
@@ -47,7 +47,7 @@ export class ServicesComponent {
         'Integração com sistemas de CRM'
       ],
       link: 'https://chatwoot.storminnovation.com.br',
-      linkText: 'Conheça'
+      linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-star',
@@ -60,7 +60,7 @@ export class ServicesComponent {
         'Gestão estratégica de marca online'
       ],
       link: 'https://crm.storminnovation.com.br',
-      linkText: 'Detalhes'
+      linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-shopping-cart',
@@ -73,7 +73,7 @@ export class ServicesComponent {
         'Gestão de estoque e pedidos'
       ],
       link: 'https://n8n.storminnovation.com.br',
-      linkText: 'Veja como funciona'
+      linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-network-wired',
@@ -85,7 +85,7 @@ export class ServicesComponent {
         'Centralização de informações críticas'
       ],
       link: 'https://integracao.storminnovation.com.br',
-      linkText: 'Explore'
+      linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-desktop',
@@ -111,7 +111,7 @@ export class ServicesComponent {
         'Manutenção preventiva e corretiva'
       ],
       link: 'https://seguranca.storminnovation.com.br',
-      linkText: 'Conheça'
+      linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-volume-up',
@@ -124,7 +124,7 @@ export class ServicesComponent {
         'Manutenção e atualizações'
       ],
       link: 'https://audio.storminnovation.com.br',
-      linkText: 'Detalhes'
+      linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-shield-alt',
@@ -137,7 +137,7 @@ export class ServicesComponent {
         'Resposta a emergências'
       ],
       link: 'https://alarmes.storminnovation.com.br',
-      linkText: 'Explore'
+      linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-paint-brush',
@@ -150,7 +150,20 @@ export class ServicesComponent {
         'Gestão de campanhas digitais'
       ],
       link: 'https://design.storminnovation.com.br',
-      linkText: 'Veja exemplos'
+      linkText: 'Saiba mais'
     }
+  ];
+  orderedServices = [
+    this.services[0], // Dashboards
+    this.services[3], // Gestão de Reputação
+    this.services[1], // Websites
+    this.services[4], // E-Commerce
+    this.services[2], // WhatsApp
+    this.services[5], // Integração de Sistemas
+    this.services[10], // Design
+    this.services[6], // Suporte Técnico
+    this.services[7], // CFTV
+    this.services[9], // Alarmes
+    this.services[8]  // Sonorização
   ];
 }

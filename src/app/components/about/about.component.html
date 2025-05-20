@@ -2,13 +2,13 @@
   <div class="container">
     <div class="section-title">
       <h2>Transformação Digital</h2>
-      <p>A Digital Fluxo & Tech nasce com o propósito de transformar o mercado por meio da inovação, tecnologia e performance.</p>
+      <p>A Fluxo Digital & Tech nasce com o propósito de transformar o mercado por meio da inovação, tecnologia e performance.</p>
     </div>
     
     <div class="about-content">
       <div class="about-text">
         <h3>Nosso Diferencial</h3>
-        <p class="highlight">A Digital Fluxo & Tech vai além da consultoria: somos uma força de transformação. Acreditamos que unir dados, design, automação e estratégia pode elevar o padrão de qualidade e gestão do fitness nacional.</p>
+        <p class="highlight">A Fluxo Digital & Tech vai além da consultoria: somos uma força de transformação. Acreditamos que unir dados, design, automação e estratégia pode elevar o padrão de qualidade e gestão do fitness nacional.</p>
         <p>Com uma equipe criativa, técnica e apaixonada por inovação, nosso compromisso é claro: levar o seu negócio ao próximo nível.</p>
         
         <div class="mission-vision">
@@ -33,34 +33,19 @@
       </div>
       
       <div class="about-image floating">
-        <img src="https://i.imgur.com/wbes4GI.jpeg" alt="Equipe Digital Fluxo & Tech">
+        <img src="https://i.imgur.com/wbes4GI.jpeg" alt="Equipe Fluxo Digital & Tech">
       </div>
     </div>
     
-    <div class="clients-section">
+   <div class="clients-section">
       <h3>Nossos Parceiros</h3>
       <p class="clients-caption">Trabalhamos com as melhores redes de academias e estúdios do país, entregando resultados excepcionais</p>
       
-      <div class="clients-grid">
-        <div class="client-logo">
-          <img src="https://i.imgur.com/lN0LTy9.jpeg" alt="Academia Premium">
-      
-        </div>
-        <div class="client-logo">
-          <img src="https://via.placeholder.com/150x80?text=Fitness+Total" alt="Fitness Total">
-          <span class="client-tooltip">Fitness Total</span>
-        </div>
-        <div class="client-logo">
-          <img src="https://via.placeholder.com/150x80?text=Gym+Evolution" alt="Gym Evolution">
-          <span class="client-tooltip">Gym Evolution</span>
-        </div>
-        <div class="client-logo">
-          <img src="https://via.placeholder.com/150x80?text=Power+Club" alt="Power Club">
-          <span class="client-tooltip">Power Club</span>
-        </div>
-        <div class="client-logo">
-          <img src="https://via.placeholder.com/150x80?text=Body+Tech" alt="Body Tech">
-          <span class="client-tooltip">Body Tech</span>
+      <div class="clients-carousel">
+        <div class="clients-track" [style.animation-duration]="animationDuration">
+          <div class="client-logo" *ngFor="let client of duplicatedClients">
+            <img [src]="client.logo" [alt]="client.name" [title]="client.name">
+          </div>
         </div>
       </div>
     </div>
