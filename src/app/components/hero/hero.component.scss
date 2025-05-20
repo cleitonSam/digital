@@ -121,3 +121,31 @@ $gradient: linear-gradient(135deg, $primary, $secondary);
 .btn {
   animation: neon-glow 3s infinite alternate;
 }
+
+.hero-logo {
+  margin: 0 auto 30px;
+  max-width: 200px;
+  animation: float 6s ease-in-out infinite;
+  
+  img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba($primary, 0.5));
+  }
+
+  @media (max-width: 768px) {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+}
+
+// Ajuste o hero-content para acomodar o logo
+.hero-content {
+  padding: 40px 20px; // Adicione algum padding
+}
+
+// Ajuste a animação float existente
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
