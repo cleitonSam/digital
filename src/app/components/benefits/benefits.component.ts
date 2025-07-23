@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { Benefit } from '../../models/benefit.model';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NgFor } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+import { Benefit } from '../../models/benefit.model';
 
 @Component({
   selector: 'app-benefits',
@@ -8,7 +10,7 @@ import { NgFor } from '@angular/common';
   imports: [NgFor],
   styleUrls: ['./benefits.component.scss']
 })
-export class BenefitsComponent {
+export class BenefitsComponent implements OnInit {
   benefits: Benefit[] = [
     {
       icon: 'fas fa-database',
@@ -41,4 +43,37 @@ export class BenefitsComponent {
       description: 'Diferenciação no mercado com tecnologia de ponta e gestão profissionalizada.'
     }
   ];
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta,
+    private title: Title
+  ) {}
+
+  ngOnInit(): void {
+    this.setMetaTags();
+  }
+
+  private setMetaTags(): void {
+    this.title.setTitle('Benefícios Exclusivos - Fluxo Digital Tech');
+    
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Descubra os 6 principais benefícios de nossas soluções: gestão baseada em dados, redução de custos, experiência do aluno e mais.'
+    });
+
+    // Open Graph / Social Media
+    this.meta.updateTag({ 
+      property: 'og:title', 
+      content: 'Benefícios para Transformar Seu Negócio - Fluxo Digital Tech' 
+    });
+    this.meta.updateTag({ 
+      property: 'og:description', 
+      content: 'Conheça como nossas soluções em tecnologia podem otimizar tempo, reduzir custos e aumentar receitas da sua empresa.' 
+    });
+  }
+
+  trackByBenefit(index: number, benefit: Benefit): string {
+    return benefit.title; // Melhora performance do ngFor
+  }
 }

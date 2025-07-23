@@ -1,15 +1,26 @@
-<header id="header" [class.scrolled]="isScrolled">
+<header id="header" [class.scrolled]="isScrolled" aria-label="Navegação principal">
   <div class="container header-container">
-    <a href="#" class="logo" (click)="smoothScrollTo('home', $event)">
-      <img src="http://i.imgur.com/JweT3K3.png" alt="Logo">
+    <a href="#" class="logo" (click)="smoothScrollTo('home', $event)" aria-label="Página inicial - Fluxo Digital & Tech">
+      <img src="http://i.imgur.com/JweT3K3.png" alt="Logo Fluxo Digital & Tech">
     </a>
-    <nav>
-      <ul>
-        <li><a (click)="smoothScrollTo('about', $event)">Sobre</a></li>
-        <li><a (click)="smoothScrollTo('services', $event)">Soluções</a></li>
-        <li><a (click)="smoothScrollTo('integrations', $event)">Integrações</a></li>
-        <li><a (click)="smoothScrollTo('benefits', $event)">Benefícios</a></li>
-        <li><a (click)="smoothScrollTo('methodology', $event)">Metodologia</a></li>
+    
+    <nav aria-label="Navegação principal">
+      <ul role="menubar">
+        <li role="none">
+          <a (click)="smoothScrollTo('about', $event)" role="menuitem" tabindex="0">Sobre</a>
+        </li>
+        <li role="none">
+          <a (click)="smoothScrollTo('services', $event)" role="menuitem" tabindex="0">Soluções</a>
+        </li>
+        <li role="none">
+          <a (click)="smoothScrollTo('integrations', $event)" role="menuitem" tabindex="0">Integrações</a>
+        </li>
+        <li role="none">
+          <a (click)="smoothScrollTo('benefits', $event)" role="menuitem" tabindex="0">Benefícios</a>
+        </li>
+        <li role="none">
+          <a (click)="smoothScrollTo('methodology', $event)" role="menuitem" tabindex="0">Metodologia</a>
+        </li>
       </ul>
     </nav>
   </div>

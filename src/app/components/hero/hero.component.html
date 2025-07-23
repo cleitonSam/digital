@@ -1,14 +1,21 @@
-<section class="hero">
-  <div id="hero-particles" class="hero-particles"></div>
+<section class="hero" aria-labelledby="hero-heading">
+  <div id="hero-particles" class="hero-particles" aria-hidden="true"></div>
   <div class="hero-content">
-    <!-- Adicione esta div para o logo -->
+    <!-- Logo com descrição adequada -->
     <div class="hero-logo">
-      <img src="http://i.imgur.com/JweT3K3.png" alt="Logo">
+      <img src="http://i.imgur.com/JweT3K3.png" alt="Logo Fluxo Digital & Tech - Revolucionando o Mercado Digital">
     </div>
-    <h1>Revolucionando o Mercado</h1>
+    
+    <h1 id="hero-heading">Revolucionando o Mercado Digital</h1>
     <p>Tecnologia, inovação e performance para levar sua empresa ao próximo nível</p>
+    
     <div class="hero-buttons">
-      <a (click)="scrollTo('contact')" class="btn"><span>Fale com nossos especialistas</span></a>
+      <a (click)="scrollTo('contact')" 
+         class="btn" 
+         role="button"
+         aria-label="Fale com nossos especialistas sobre soluções digitais">
+        <span>Fale com nossos especialistas</span>
+      </a>
     </div>
   </div>
 </section>

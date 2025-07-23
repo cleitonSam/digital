@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { Service } from '../../models/service.model';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NgFor } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+import { Service } from '../../models/service.model';
 
 @Component({
   selector: 'app-services',
@@ -153,17 +155,53 @@ export class ServicesComponent {
       linkText: 'Saiba mais'
     }
   ];
-  orderedServices = [
-    this.services[0], // Dashboards
-    this.services[3], // Gestão de Reputação
-    this.services[1], // Websites
-    this.services[4], // E-Commerce
-    this.services[2], // WhatsApp
-    this.services[5], // Integração de Sistemas
-    this.services[10], // Design
-    this.services[6], // Suporte Técnico
-    this.services[7], // CFTV
-    this.services[9], // Alarmes
-    this.services[8]  // Sonorização
-  ];
+  orderedServices: Service[];
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta,
+    private title: Title
+  ) {
+    // Manter a mesma ordem de serviços
+    this.orderedServices = [
+      this.services[0], // Dashboards
+      this.services[3], // Gestão de Reputação
+      this.services[1], // Websites
+      this.services[4], // E-Commerce
+      this.services[2], // WhatsApp
+      this.services[5], // Integração de Sistemas
+      this.services[10], // Design
+      this.services[6], // Suporte Técnico
+      this.services[7], // CFTV
+      this.services[9], // Alarmes
+      this.services[8]  // Sonorização
+    ];
+  }
+
+  ngOnInit(): void {
+    this.setMetaTags();
+  }
+
+  private setMetaTags(): void {
+    this.title.setTitle('Fluxo Digital Tech - Nossos Serviços Integrados');
+    
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Soluções completas em tecnologia e marketing digital para sua empresa. Dashboards, websites, automações, e-commerce e muito mais.'
+    });
+
+    // Open Graph / Social Media
+    this.meta.updateTag({ 
+      property: 'og:title', 
+      content: 'Fluxo Digital Tech - Serviços de Tecnologia Integrada' 
+    });
+    this.meta.updateTag({ 
+      property: 'og:description', 
+      content: 'Conheça nossos serviços completos em tecnologia e marketing digital para alavancar seu negócio.' 
+    });
+  }
+
+  trackByService(index: number, service: Service): string {
+    return service.title; // Melhora performance do ngFor
+  }
 }

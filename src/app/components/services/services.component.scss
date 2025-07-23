@@ -1,4 +1,5 @@
-/* Variáveis atualizadas */
+@use "sass:color";
+
 $primary: #0066ff;
 $primary-light: #3385ff;
 $secondary: #00f2fe;
@@ -254,7 +255,7 @@ $whatsapp: #25D366;
     
     &:active {
       transform: translateY(0);
-      background: darken($whatsapp, 5%);
+     background: color.adjust($whatsapp, $lightness: -5%);
     }
   }
 }

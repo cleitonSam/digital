@@ -1,11 +1,13 @@
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  imports: [NgFor],
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  standalone: true,
+  imports: [NgFor]
 })
 export class AboutComponent implements OnInit {
   clients = [
@@ -24,26 +26,24 @@ export class AboutComponent implements OnInit {
   duplicatedClients: any[] = [];
   animationDuration: string = '';
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngOnInit() {
-    // Duplica os clientes para criar o efeito contínuo
     this.duplicatedClients = [...this.clients, ...this.clients];
-    
-    // Calcula a duração da animação baseada no número de clientes
-    this.calculateAnimationDuration();
-    
-    // Recalcula quando a janela é redimensionada
-    window.addEventListener('resize', () => this.calculateAnimationDuration());
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.calculateAnimationDuration();
+      window.addEventListener('resize', this.calculateAnimationDuration.bind(this));
+    }
   }
 
   calculateAnimationDuration() {
-    const baseDuration = 20; // Duração base em segundos
+    const baseDuration = 20;
     const clientCount = this.clients.length;
-    const duration = baseDuration * (clientCount / 8); // Ajusta para quantidade de clientes
-    
-    // Ajusta para telas menores
-    const screenWidth = window.innerWidth;
+    const screenWidth = isPlatformBrowser(this.platformId) ? window.innerWidth : 1024;
     const mobileFactor = screenWidth < 768 ? 1.5 : 1;
-    
-    this.animationDuration = `${duration * mobileFactor}s`;
+
+    const duration = baseDuration * (clientCount / 8) * mobileFactor;
+    this.animationDuration = `${duration}s`;
   }
 }

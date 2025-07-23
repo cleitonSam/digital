@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { Step } from '../../models/step.model';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NgFor } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+import { Step } from '../../models/step.model';
 
 @Component({
   selector: 'app-methodology',
@@ -8,7 +10,7 @@ import { NgFor } from '@angular/common';
   imports: [NgFor],
   styleUrls: ['./methodology.component.scss']
 })
-export class MethodologyComponent {
+export class MethodologyComponent implements OnInit {
   steps: Step[] = [
     {
       number: 1,
@@ -36,4 +38,37 @@ export class MethodologyComponent {
       description: 'Preparação da estrutura para crescimento, garantindo que todas as unidades futuras possam ser integradas facilmente ao sistema.'
     }
   ];
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta,
+    private title: Title
+  ) {}
+
+  ngOnInit(): void {
+    this.setMetaTags();
+  }
+
+  private setMetaTags(): void {
+    this.title.setTitle('Metodologia Digital - Fluxo Digital Tech');
+    
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Conheça nosso processo de transformação digital em 5 etapas: diagnóstico, planejamento, implementação, monitoramento e expansão.'
+    });
+
+    // Open Graph / Social Media
+    this.meta.updateTag({ 
+      property: 'og:title', 
+      content: 'Metodologia Digital Comprovada - Fluxo Digital Tech' 
+    });
+    this.meta.updateTag({ 
+      property: 'og:description', 
+      content: 'Processo estruturado em 5 etapas para transformação digital eficiente e resultados mensuráveis.' 
+    });
+  }
+
+  trackByStep(index: number, step: Step): number {
+    return step.number; // Melhora performance do ngFor
+  }
 }
