@@ -13,34 +13,34 @@ import { Benefit } from '../../models/benefit.model';
 export class BenefitsComponent implements OnInit {
   benefits: Benefit[] = [
     {
-      icon: 'fas fa-database',
-      title: 'Gestão Baseada em Dados',
-      description: 'Decisões estratégicas apoiadas por dados reais e indicadores precisos, reduzindo a subjetividade na gestão.'
+      icon: 'fas fa-user-plus',
+      title: '+38% novas matrículas',
+      description: 'Funil de mídia + landing pages + automação de visita transformam clique em cliente. Resultado médio dos clientes Fluxo nos 90 primeiros dias.'
     },
     {
-      icon: 'fas fa-clock',
-      title: 'Otimização de Tempo',
-      description: 'Automação de processos repetitivos libera sua equipe para focar no que realmente importa: o atendimento ao aluno.'
+      icon: 'fas fa-shield-heart',
+      title: '-42% de churn',
+      description: 'Detectamos cliente em risco antes do cancelamento. Régua de retenção via WhatsApp recupera quem ia embora — sem desconto agressivo.'
     },
     {
-      icon: 'fas fa-money-bill-wave',
-      title: 'Redução de Custos',
-      description: 'Identificação de desperdícios e oportunidades de economia, com melhor alocação de recursos.'
-    },
-    {
-      icon: 'fas fa-users',
-      title: 'Experiência do Aluno',
-      description: 'Tecnologia que encanta e fideliza, transformando alunos em promotores da sua marca.'
+      icon: 'fas fa-stopwatch',
+      title: 'Resposta em < 5 min',
+      description: 'Lead que demora 30 minutos pra ser respondido vira concorrente. WhatsApp inteligente da Fluxo responde 24/7 com humano só quando precisa.'
     },
     {
       icon: 'fas fa-chart-pie',
-      title: 'Novas Fontes de Receita',
-      description: 'E-commerce permite vender produtos, serviços e assinaturas 24/7, aumentando seu faturamento.'
+      title: 'Ticket médio +24%',
+      description: 'Upsell estruturado de plano anual, modalidades extras, produtos. Mesmo cliente, mais receita. Sem virar chato no atendimento.'
     },
     {
-      icon: 'fas fa-trophy',
-      title: 'Vantagem Competitiva',
-      description: 'Diferenciação no mercado com tecnologia de ponta e gestão profissionalizada.'
+      icon: 'fas fa-tachometer-alt',
+      title: 'Decisão com dado, não achismo',
+      description: 'Dashboard único integra sua agenda, CRM, redes sociais e mídia paga. Você abre o celular e sabe se a semana foi verde ou vermelha.'
+    },
+    {
+      icon: 'fas fa-handshake',
+      title: 'Parceria com pele no jogo',
+      description: 'Operamos junto com sua equipe, com reunião semanal de números. Sem terceirizada que some. KPI compartilhado, time só.'
     }
   ];
 
@@ -55,25 +55,25 @@ export class BenefitsComponent implements OnInit {
   }
 
   private setMetaTags(): void {
-    this.title.setTitle('Benefícios Exclusivos - Fluxo Digital Tech');
-    
+    this.title.setTitle('Resultados que entregamos — Fluxo Digital & Tech');
+
     this.meta.updateTag({
       name: 'description',
-      content: 'Descubra os 6 principais benefícios de nossas soluções: gestão baseada em dados, redução de custos, experiência do aluno e mais.'
+      content:
+        '+38% de matrícula, -42% de churn, ticket médio +24%. Os resultados médios dos clientes da Fluxo Digital & Tech em academias, clínicas e pet shops.'
     });
 
-    // Open Graph / Social Media
-    this.meta.updateTag({ 
-      property: 'og:title', 
-      content: 'Benefícios para Transformar Seu Negócio - Fluxo Digital Tech' 
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Resultados que falam por nós — Fluxo Digital & Tech'
     });
-    this.meta.updateTag({ 
-      property: 'og:description', 
-      content: 'Conheça como nossas soluções em tecnologia podem otimizar tempo, reduzir custos e aumentar receitas da sua empresa.' 
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Veja como o stack da Fluxo move o ponteiro de matrícula, retenção e ticket no seu negócio.'
     });
   }
 
   trackByBenefit(index: number, benefit: Benefit): string {
-    return benefit.title; // Melhora performance do ngFor
+    return benefit.title;
   }
 }

@@ -14,28 +14,28 @@ export class MethodologyComponent implements OnInit {
   steps: Step[] = [
     {
       number: 1,
-      title: 'Diagnóstico Inicial',
-      description: 'Análise detalhada da situação atual da academia, identificando pontos fortes e oportunidades de melhoria em todas as áreas.'
+      title: 'Diagnóstico (30 min)',
+      description: 'Olhamos seus números reais — churn, ticket, ciclo de cliente, custo de aquisição. Saímos com 3 alavancas concretas. Sem proposta vazia.'
     },
     {
       number: 2,
-      title: 'Planejamento Estratégico',
-      description: 'Desenvolvimento de um plano personalizado com objetivos claros, prazos e métricas de sucesso para cada área de atuação.'
+      title: 'Plano com KPI',
+      description: 'Plano de 90 dias com meta clara: matrícula, agendamento, retenção. Definimos os indicadores que vão nos cobrar — incluindo nós.'
     },
     {
       number: 3,
-      title: 'Implementação Tecnológica',
-      description: 'Configuração e implantação de todas as soluções tecnológicas, com treinamento da equipe e ajustes conforme necessário.'
+      title: 'Implantação do stack',
+      description: 'Dashboard, WhatsApp automatizado, CRM e funil de mídia ligados ao seu sistema. Treinamento da equipe. Tudo testado em ambiente real.'
     },
     {
       number: 4,
-      title: 'Monitoramento Contínuo',
-      description: 'Acompanhamento dos resultados com ajustes finos e otimizações para garantir o máximo desempenho das soluções implementadas.'
+      title: 'Ritmo de operação',
+      description: 'Reunião semanal de números. Otimização contínua de criativos, copy e funil. Você fica no negócio — a Fluxo opera o motor.'
     },
     {
       number: 5,
-      title: 'Expansão e Escalabilidade',
-      description: 'Preparação da estrutura para crescimento, garantindo que todas as unidades futuras possam ser integradas facilmente ao sistema.'
+      title: 'Escala e expansão',
+      description: 'Quando o motor estiver previsível, ajudamos a abrir nova unidade, lançar nova modalidade ou escalar mídia. Crescimento sem caos.'
     }
   ];
 
@@ -50,25 +50,25 @@ export class MethodologyComponent implements OnInit {
   }
 
   private setMetaTags(): void {
-    this.title.setTitle('Metodologia Digital - Fluxo Digital Tech');
-    
+    this.title.setTitle('Metodologia de Growth — Fluxo Digital & Tech');
+
     this.meta.updateTag({
       name: 'description',
-      content: 'Conheça nosso processo de transformação digital em 5 etapas: diagnóstico, planejamento, implementação, monitoramento e expansão.'
+      content:
+        'Diagnóstico, plano com KPI, stack tecnológico, ritmo semanal e expansão. A metodologia da Fluxo para crescimento previsível em serviços recorrentes.'
     });
 
-    // Open Graph / Social Media
-    this.meta.updateTag({ 
-      property: 'og:title', 
-      content: 'Metodologia Digital Comprovada - Fluxo Digital Tech' 
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Metodologia de Growth comprovada — Fluxo Digital & Tech'
     });
-    this.meta.updateTag({ 
-      property: 'og:description', 
-      content: 'Processo estruturado em 5 etapas para transformação digital eficiente e resultados mensuráveis.' 
+    this.meta.updateTag({
+      property: 'og:description',
+      content: '5 etapas para sair do achismo e crescer com previsibilidade no seu setor.'
     });
   }
 
   trackByStep(index: number, step: Step): number {
-    return step.number; // Melhora performance do ngFor
+    return step.number;
   }
 }

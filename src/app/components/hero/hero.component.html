@@ -1,21 +1,49 @@
 <section class="hero" aria-labelledby="hero-heading">
   <div id="hero-particles" class="hero-particles" aria-hidden="true"></div>
+
   <div class="hero-content">
-    <!-- Logo com descrição adequada -->
-    <div class="hero-logo">
-      <img src="http://i.imgur.com/JweT3K3.png" alt="Logo Fluxo Digital & Tech - Revolucionando o Mercado Digital">
+    <!-- Eyebrow / vertical chips -->
+    <div class="hero-eyebrow" aria-label="Setores que atendemos">
+      <span class="chip">Academias</span>
+      <span class="chip">Clínicas &amp; Estética</span>
+      <span class="chip">Pet &amp; Vet</span>
     </div>
-    
-    <h1 id="hero-heading">Revolucionando o Mercado Digital</h1>
-    <p>Tecnologia, inovação e performance para levar sua empresa ao próximo nível</p>
-    
+
+    <h1 id="hero-heading">
+      Mais clientes recorrentes.<br>
+      Menos churn. <span class="accent">Crescimento previsível.</span>
+    </h1>
+
+    <p>
+      Stack completo de marketing e tecnologia para negócios de serviço recorrente
+      que querem parar de perder cliente e crescer com dados — não com promessa.
+    </p>
+
+    <!-- Microprova -->
+    <ul class="hero-proof" aria-label="Resultados médios dos nossos clientes">
+      <li><strong>+38%</strong> de novas matrículas / agendamentos</li>
+      <li><strong>-42%</strong> de churn no segundo ciclo</li>
+      <li><strong>4.9/5</strong> de satisfação dos donos atendidos</li>
+    </ul>
+
     <div class="hero-buttons">
-      <a (click)="scrollTo('contact')" 
-         class="btn" 
+      <a (click)="scrollTo('cta')"
+         class="btn btn-primary"
          role="button"
-         aria-label="Fale com nossos especialistas sobre soluções digitais">
-        <span>Fale com nossos especialistas</span>
+         aria-label="Solicitar diagnóstico gratuito de 30 minutos">
+        <span>Diagnóstico gratuito de 30 min →</span>
+      </a>
+
+      <a (click)="scrollTo('about')"
+         class="btn btn-ghost"
+         role="button"
+         aria-label="Ver cases reais com números">
+        <span>Ver cases com números</span>
       </a>
     </div>
+
+    <p class="hero-microcopy">
+      Sem compromisso. Em 30 minutos você sai com 3 alavancas claras pra aplicar no seu negócio.
+    </p>
   </div>
 </section>

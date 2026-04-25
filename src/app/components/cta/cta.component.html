@@ -1,10 +1,64 @@
-<section class="cta" aria-labelledby="cta-heading">
+<section id="cta" class="cta" aria-labelledby="cta-heading">
   <div class="container">
-    <h2 id="cta-heading">Pronto para a Transformação?</h2>
-    <p>A Fluxo Digital & Tech está preparada para guiar sua empresa através da revolução digital. Com nossas soluções integradas, sua empresa estará equipada com as melhores ferramentas para crescer, escalar e dominar o mercado.</p>
-    <p><span class="highlight" aria-hidden="true">O futuro é digital. O futuro começa agora.</span></p>
-    <a (click)="scrollTo('contact')" class="btn" role="button" aria-label="Fale com nossos especialistas sobre transformação digital">
-      <span>Fale com nossos especialistas</span>
-    </a>
+    <div class="cta-grid">
+      <div class="cta-copy">
+        <span class="eyebrow">Diagnóstico gratuito · 30 minutos</span>
+        <h2 id="cta-heading">Em 30 minutos você sai com 3 alavancas pra aplicar essa semana.</h2>
+        <p>
+          Sem proposta empurrada. Olhamos seus números reais — matrícula, churn, ticket, ciclo de cliente —
+          e devolvemos onde está o dinheiro que você está deixando na mesa.
+        </p>
+        <ul class="cta-bullets">
+          <li><i class="fas fa-check-circle"></i> Análise dos seus números atuais</li>
+          <li><i class="fas fa-check-circle"></i> 3 alavancas concretas pra aplicar</li>
+          <li><i class="fas fa-check-circle"></i> Comparativo com o seu setor</li>
+          <li><i class="fas fa-check-circle"></i> Sem compromisso — você decide depois</li>
+        </ul>
+      </div>
+
+      <form class="cta-form"
+            #diagForm
+            action="https://wa.me/5511920412220"
+            method="get"
+            target="_blank"
+            (submit)="onSubmit($event, diagForm)"
+            aria-label="Solicitar diagnóstico gratuito">
+        <h3>Quero meu diagnóstico</h3>
+
+        <label>
+          Seu nome
+          <input type="text" name="nome" required autocomplete="name" placeholder="Como prefere ser chamado">
+        </label>
+
+        <label>
+          Nome do negócio
+          <input type="text" name="empresa" required autocomplete="organization" placeholder="Academia / Clínica / Pet shop">
+        </label>
+
+        <label>
+          Setor
+          <select name="setor" required>
+            <option value="">Selecione</option>
+            <option value="Academia / Estúdio fitness">Academia / Estúdio fitness</option>
+            <option value="Clínica de estética / Salão">Clínica de estética / Salão</option>
+            <option value="Pet shop / Clínica veterinária">Pet shop / Clínica veterinária</option>
+            <option value="Outro serviço recorrente">Outro serviço recorrente</option>
+          </select>
+        </label>
+
+        <label>
+          WhatsApp
+          <input type="tel" name="whatsapp" required pattern="[0-9\s\(\)\-\+]+" placeholder="(11) 9 9999-9999">
+        </label>
+
+        <button type="submit" class="btn btn-primary">
+          <span>Receber diagnóstico no WhatsApp →</span>
+        </button>
+
+        <p class="cta-form-microcopy">
+          Resposta em até 1 dia útil. Seus dados ficam só com a Fluxo — sem spam, sem corretora.
+        </p>
+      </form>
+    </div>
   </div>
 </section>

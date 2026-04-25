@@ -11,150 +11,121 @@ import { Service } from '../../models/service.model';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent {
+  // ---- 5 PRODUTOS DE GROWTH (foco da home) ----
   services: Service[] = [
     {
       icon: 'fas fa-chart-line',
-      title: 'Dashboards Inteligentes',
+      title: 'Dashboard de Performance',
       items: [
-        'Painéis visuais personalizados com indicadores',
-        'Visualização de KPIs críticos em tempo real',
-        'Integração com múltiplas fontes de dados',
-        'Alertas automáticos para anomalias',
-        'Acesso remoto e em tempo real'
+        'KPIs do seu setor: churn, matrícula, ticket, LTV',
+        'Integração com seu sistema (academia, clínica, pet)',
+        'Alertas automáticos para queda de ativos',
+        'Acesso pelo celular em tempo real'
       ],
-      link: 'https://app.storminnovation.com.br',
-      linkText: 'Saiba mais'
-    },
-    {
-      icon: 'fas fa-globe',
-      title: 'Websites de Alta Conversão',
-      items: [
-        'Design centrado no usuário e responsivo',
-        'Otimização para mecanismos de busca',
-        'Integração com redes sociais',
-        'Ferramentas avançadas de captação de leads',
-        'Mecanização de modelos comerciais'
-      ],
-      link: 'http://evo.storminnovation.com.br/manager',
-      linkText: 'Saiba mais'
+      link: 'https://wa.me/5511920412220',
+      linkText: 'Ver demo do dashboard'
     },
     {
       icon: 'fab fa-whatsapp',
-      title: 'Automações WhatsApp',
+      title: 'Automação WhatsApp 24/7',
       items: [
-        'Respostas automáticas inteligentes 24/7',
-        'Atendimento personalizado via chat',
-        'Agendamento de compromissos automático',
-        'Lembretes e notificações importantes',
-        'Integração com sistemas de CRM'
+        'Recuperação de cliente sumido (winback)',
+        'Confirmação automática de aulas e consultas',
+        'Resposta inteligente fora do horário',
+        'Pesquisa de NPS e prova social',
+        'Integração com seu CRM e agenda'
       ],
-      link: 'https://chatwoot.storminnovation.com.br',
-      linkText: 'Saiba mais'
+      link: 'https://wa.me/5511920412220',
+      linkText: 'Quero automatizar meu WhatsApp'
     },
     {
-      icon: 'fas fa-star',
-      title: 'Gestão de Reputação',
+      icon: 'fas fa-users-cog',
+      title: 'CRM + Gestão de Reputação',
       items: [
-        'Monitoramento de avaliações em tempo real',
-        'Respostas padronizadas e personalizadas',
-        'Relatórios detalhados de satisfação',
-        'Estratégias de recuperação de clientes insatisfeitos',
-        'Gestão estratégica de marca online'
+        'Funil comercial: visita → matrícula → retenção',
+        'Monitoramento de Google Reviews em tempo real',
+        'Resposta padronizada e personalizada',
+        'Recuperação de cliente insatisfeito',
+        'Score de saúde da carteira'
       ],
-      link: 'https://crm.storminnovation.com.br',
-      linkText: 'Saiba mais'
+      link: 'https://wa.me/5511920412220',
+      linkText: 'Conhecer o CRM'
     },
+    {
+      icon: 'fas fa-globe',
+      title: 'Sites e Landing Pages que vendem',
+      items: [
+        'Landing page por modalidade / serviço',
+        'Otimização para Google (SEO técnico)',
+        'Captura integrada com WhatsApp e CRM',
+        'Velocidade < 1.5s (Core Web Vitals)',
+        'Mobile-first de verdade'
+      ],
+      link: 'https://wa.me/5511920412220',
+      linkText: 'Ver sites publicados'
+    },
+    {
+      icon: 'fas fa-bullhorn',
+      title: 'Mídia paga com ROAS rastreado',
+      items: [
+        'Meta Ads + Google Ads para captação local',
+        'Criativos específicos do seu setor',
+        'Acompanhamento de matrícula gerada por canal',
+        'Otimização semanal por CAC',
+        'Relatório mensal sem firula'
+      ],
+      link: 'https://wa.me/5511920412220',
+      linkText: 'Quero rodar mídia que vende'
+    }
+  ];
+
+  // ---- TRACK TECH (em outra seção, fora da home principal) ----
+  // mantidos no model mas não exibidos como growth
+  techServices: Service[] = [
     {
       icon: 'fas fa-shopping-cart',
       title: 'E-Commerce Integrado',
-      items: [
-        'Loja virtual completa e segura',
-        'Venda de produtos e serviços online',
-        'Sistema de assinaturas recorrentes',
-        'Integração com meios de pagamento',
-        'Gestão de estoque e pedidos'
-      ],
-      link: 'https://n8n.storminnovation.com.br',
+      items: ['Loja virtual segura', 'Assinaturas recorrentes', 'Pagamentos integrados'],
+      link: 'https://wa.me/5511920412220',
       linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-network-wired',
-      title: 'Integração Total de Sistemas',
-      items: [
-        'Unificação de todas as soluções tecnológicas',
-        'Compatibilidade entre diferentes plataformas',
-        'Fluxo de dados automatizado entre sistemas',
-        'Centralização de informações críticas'
-      ],
-      link: 'https://integracao.storminnovation.com.br',
-      linkText: 'Saiba mais'
-    },
-    {
-      icon: 'fas fa-desktop',
-      title: 'Suporte Técnico Especializado',
-      items: [
-        'Suporte remoto para computadores e redes',
-        'Gestão de ativos e licenças',
-        'Visitas técnicas programadas',
-        'Monitoramento proativo de sistemas',
-        'Check-up preventivo regular'
-      ],
-      link: 'https://suporte.storminnovation.com.br',
-      linkText: 'Saiba mais'
-    },
-    {
-      icon: 'fas fa-video',
-      title: 'Soluções de CFTV',
-      items: [
-        'Instalação profissional de câmeras',
-        'Configuração de sistemas de monitoramento',
-        'Acesso remoto às imagens',
-        'Integração com sistemas de alarme',
-        'Manutenção preventiva e corretiva'
-      ],
-      link: 'https://seguranca.storminnovation.com.br',
-      linkText: 'Saiba mais'
-    },
-    {
-      icon: 'fas fa-volume-up',
-      title: 'Sonorização Ambiente',
-      items: [
-        'Projeto acústico personalizado',
-        'Instalação de sistemas de som profissionais',
-        'Controle centralizado de áudio',
-        'Soluções para ambientes corporativos',
-        'Manutenção e atualizações'
-      ],
-      link: 'https://audio.storminnovation.com.br',
-      linkText: 'Saiba mais'
-    },
-    {
-      icon: 'fas fa-shield-alt',
-      title: 'Sistemas de Alarme',
-      items: [
-        'Instalação de sensores de segurança',
-        'Monitoramento 24/7',
-        'Controle via aplicativo móvel',
-        'Integração com outros sistemas de segurança',
-        'Resposta a emergências'
-      ],
-      link: 'https://alarmes.storminnovation.com.br',
+      title: 'Integração de Sistemas',
+      items: ['APIs e webhooks', 'Fluxo de dados automatizado', 'Centralização de informações'],
+      link: 'https://wa.me/5511920412220',
       linkText: 'Saiba mais'
     },
     {
       icon: 'fas fa-paint-brush',
       title: 'Design e Conteúdo Digital',
-      items: [
-        'Criação de imagens para redes sociais',
-        'Produção de conteúdo audiovisual',
-        'Artes para tráfego pago',
-        'Banco de imagens personalizado',
-        'Gestão de campanhas digitais'
-      ],
-      link: 'https://design.storminnovation.com.br',
+      items: ['Criativos para tráfego pago', 'Conteúdo audiovisual', 'Banco de imagens próprio'],
+      link: 'https://wa.me/5511920412220',
+      linkText: 'Saiba mais'
+    },
+    {
+      icon: 'fas fa-desktop',
+      title: 'Suporte Técnico Especializado',
+      items: ['Suporte remoto', 'Visitas técnicas', 'Monitoramento proativo'],
+      link: 'https://wa.me/5511920412220',
+      linkText: 'Saiba mais'
+    },
+    {
+      icon: 'fas fa-video',
+      title: 'CFTV e Sistemas de Alarme',
+      items: ['Câmeras profissionais', 'Acesso remoto', 'Monitoramento 24/7'],
+      link: 'https://wa.me/5511920412220',
+      linkText: 'Saiba mais'
+    },
+    {
+      icon: 'fas fa-volume-up',
+      title: 'Sonorização Ambiente',
+      items: ['Projeto acústico', 'Som profissional', 'Controle centralizado'],
+      link: 'https://wa.me/5511920412220',
       linkText: 'Saiba mais'
     }
   ];
+
   orderedServices: Service[];
 
   constructor(
@@ -162,20 +133,8 @@ export class ServicesComponent {
     private meta: Meta,
     private title: Title
   ) {
-    // Manter a mesma ordem de serviços
-    this.orderedServices = [
-      this.services[0], // Dashboards
-      this.services[3], // Gestão de Reputação
-      this.services[1], // Websites
-      this.services[4], // E-Commerce
-      this.services[2], // WhatsApp
-      this.services[5], // Integração de Sistemas
-      this.services[10], // Design
-      this.services[6], // Suporte Técnico
-      this.services[7], // CFTV
-      this.services[9], // Alarmes
-      this.services[8]  // Sonorização
-    ];
+    // Apenas os 5 de growth aparecem na home
+    this.orderedServices = this.services;
   }
 
   ngOnInit(): void {
@@ -183,25 +142,26 @@ export class ServicesComponent {
   }
 
   private setMetaTags(): void {
-    this.title.setTitle('Fluxo Digital Tech - Nossos Serviços Integrados');
-    
+    this.title.setTitle('Stack de Growth — Fluxo Digital & Tech');
+
     this.meta.updateTag({
       name: 'description',
-      content: 'Soluções completas em tecnologia e marketing digital para sua empresa. Dashboards, websites, automações, e-commerce e muito mais.'
+      content:
+        'Dashboards, WhatsApp automatizado, CRM, sites e mídia paga com ROAS rastreado. O stack completo para academias, clínicas e pet shops crescerem com dados.'
     });
 
-    // Open Graph / Social Media
-    this.meta.updateTag({ 
-      property: 'og:title', 
-      content: 'Fluxo Digital Tech - Serviços de Tecnologia Integrada' 
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Stack de Growth para serviços recorrentes — Fluxo Digital & Tech'
     });
-    this.meta.updateTag({ 
-      property: 'og:description', 
-      content: 'Conheça nossos serviços completos em tecnologia e marketing digital para alavancar seu negócio.' 
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Tecnologia que atrai, converte e retém. Conheça os 5 pilares do nosso stack de growth.'
     });
   }
 
   trackByService(index: number, service: Service): string {
-    return service.title; // Melhora performance do ngFor
+    return service.title;
   }
 }

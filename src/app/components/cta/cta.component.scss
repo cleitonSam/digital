@@ -2,39 +2,171 @@ $primary: #0066ff;
 $primary-dark: #0052cc;
 $secondary: #00f2fe;
 $secondary-dark: #00d9e6;
+$accent: #00d4ff;
 $dark: #0f172a;
 $darker: #020617;
 $light: #f8fafc;
 $gray: #94a3b8;
+$gray-light: #cbd5e1;
 $success: #10b981;
 
-$gradient: linear-gradient(135deg, $primary, $secondary);
-
 .cta {
-  background: linear-gradient(rgba($darker, 0.95), rgba($darker, 0.98)), 
+  background: linear-gradient(rgba($darker, 0.95), rgba($darker, 0.98)),
               url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
   color: white;
-  text-align: center;
-  padding: 120px 0;
+  padding: 100px 0;
   position: relative;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: start;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.cta-copy {
+  .eyebrow {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid rgba($accent, 0.4);
+    color: $accent;
+    background: rgba($accent, 0.08);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
 
   h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    font-size: 38px;
+    line-height: 1.15;
     font-weight: 800;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
   }
 
   p {
-    font-size: 20px;
-    margin-bottom: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    color: $gray;
+    font-size: 17px;
+    line-height: 1.6;
+    color: $gray-light;
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+}
+
+.cta-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: $light;
+    font-size: 15px;
+
+    i {
+      color: $success;
+      font-size: 18px;
+    }
+  }
+}
+
+.cta-form {
+  background: rgba(white, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba($accent, 0.15);
+  border-radius: 18px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @media (max-width: 576px) {
+    padding: 24px;
   }
 
-  .highlight {
-    color: $secondary;
+  h3 {
+    font-size: 22px;
     font-weight: 700;
+    color: white;
+    margin: 0 0 8px 0;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $gray-light;
+    font-weight: 600;
+  }
+
+  input, select {
+    margin-top: 6px;
+    padding: 12px 14px;
+    background: rgba(white, 0.06);
+    border: 1px solid rgba(white, 0.12);
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.2s, background 0.2s;
+
+    &::placeholder {
+      color: rgba(white, 0.4);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $accent;
+      background: rgba(white, 0.08);
+    }
+  }
+
+  select option {
+    background: $darker;
+    color: white;
+  }
+
+  .btn-primary {
+    margin-top: 8px;
+    padding: 16px 22px;
+    background: $accent;
+    color: $darker;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 6px 24px rgba($accent, 0.3);
+
+    &:hover {
+      background: $secondary;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba($accent, 0.45);
+    }
+  }
+
+  .cta-form-microcopy {
+    font-size: 12px;
+    color: rgba(white, 0.5);
+    margin: 6px 0 0 0;
+    text-align: center;
   }
 }

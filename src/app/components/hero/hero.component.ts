@@ -26,35 +26,51 @@ export class HeroComponent implements OnInit {
 
   ngOnInit(): void {
     this.setMetaTags();
-    
+
     if (this.isBrowser) {
       this.particlesService.createParticles('hero-particles');
-      this.lazyLoadLogo();
     }
   }
 
   private setMetaTags(): void {
-    this.title.setTitle('Fluxo Digital Tech - Revolucionando o Mercado com Tecnologia');
-    
+    this.title.setTitle(
+      'Fluxo Digital & Tech | Marketing e tecnologia para academias, clínicas e pet shops'
+    );
+
     this.meta.updateTag({
       name: 'description',
-      content: 'Tecnologia, inovação e performance para levar sua empresa ao próximo nível. Soluções personalizadas em marketing digital e desenvolvimento de software.'
+      content:
+        'Mais matrículas, menos churn e ticket maior para negócios de serviço recorrente. Stack de marketing, automação e dados feito sob medida para academias, clínicas e pet shops.'
     });
 
-    // Open Graph / Social Media
-    this.meta.updateTag({ property: 'og:title', content: 'Fluxo Digital Tech - Revolucionando o Mercado' });
-    this.meta.updateTag({ 
-      property: 'og:description', 
-      content: 'Transformação digital completa para seu negócio com nossas soluções em tecnologia e marketing digital.' 
+    this.meta.updateTag({
+      name: 'keywords',
+      content:
+        'marketing digital para academias, agência marketing fitness, marketing para clínicas, marketing para pet shop, automação WhatsApp academia, CRM academia, retenção de alunos, churn academia, sistema gestão academia, marketing performance fitness'
     });
-  }
 
-  private lazyLoadLogo(): void {
-    const logo = this.el.nativeElement.querySelector('.hero-logo img');
-    if (logo) {
-      this.renderer.setAttribute(logo, 'loading', 'lazy');
-      this.renderer.setAttribute(logo, 'decoding', 'async');
-    }
+    // Open Graph
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Fluxo Digital & Tech | Crescimento previsível para serviços recorrentes'
+    });
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Marketing + tecnologia para academias, clínicas e pet shops crescerem com previsibilidade. +38% de matrícula, -42% de churn em média.'
+    });
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:locale', content: 'pt_BR' });
+
+    // Twitter
+    this.meta.updateTag({
+      name: 'twitter:title',
+      content: 'Fluxo Digital & Tech | Crescimento previsível para serviços recorrentes'
+    });
+    this.meta.updateTag({
+      name: 'twitter:description',
+      content: 'Marketing e tecnologia para academias, clínicas e pet shops. Mais matrícula, menos churn.'
+    });
   }
 
   scrollTo(section: string, event?: Event): void {

@@ -1,17 +1,19 @@
 <section id="services" class="section services">
   <div class="container">
     <div class="section-title">
-      <h2>Fluxo Digital & Tech</h2>
-      <p>Tecnologia integrada para todos os aspectos da gestão da sua empresa</p>
+      <span class="eyebrow">O que entregamos</span>
+      <h2>Cinco alavancas. Um único objetivo: cliente recorrente.</h2>
+      <p>Stack proprietário desenhado para os negócios que vivem de retenção. Sem parafernália — só o que move o ponteiro.</p>
     </div>
+
     <div class="services-grid">
-      <div class="service-card" *ngFor="let service of orderedServices">
-        <i [class]="service.icon"></i>
-        <h3>{{service.title}}</h3>
+      <div class="service-card" *ngFor="let service of orderedServices; trackBy: trackByService">
+        <i [class]="service.icon" aria-hidden="true"></i>
+        <h3>{{ service.title }}</h3>
         <ul>
-          <li *ngFor="let item of service.items">{{item}}</li>
+          <li *ngFor="let item of service.items">{{ item }}</li>
         </ul>
-        <a href="https://wa.me/5511920412220" class="btn" target="_blank">{{service.linkText}}</a>
+        <a [href]="service.link" class="btn" target="_blank" rel="noopener">{{ service.linkText }}</a>
       </div>
     </div>
   </div>
