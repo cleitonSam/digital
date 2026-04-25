@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID, Renderer2, ElementRef } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ParticlesService } from '../../service/particles.service';
 import { ScrollService } from '../../service/scroll.service';
@@ -17,16 +17,13 @@ export class HeroComponent implements OnInit {
     private particlesService: ParticlesService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private meta: Meta,
-    private title: Title,
-    private renderer: Renderer2,
-    private el: ElementRef
+    private title: Title
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit(): void {
     this.setMetaTags();
-
     if (this.isBrowser) {
       this.particlesService.createParticles('hero-particles');
     }
@@ -34,42 +31,40 @@ export class HeroComponent implements OnInit {
 
   private setMetaTags(): void {
     this.title.setTitle(
-      'Fluxo Digital & Tech | Marketing e tecnologia para academias, clínicas e pet shops'
+      'Fluxo Digital & Tech | A stack que vende — IA, atendimento, email e estratégia em um só motor'
     );
 
     this.meta.updateTag({
       name: 'description',
       content:
-        'Mais matrículas, menos churn e ticket maior para negócios de serviço recorrente. Stack de marketing, automação e dados feito sob medida para academias, clínicas e pet shops.'
+        'Não somos agência. Somos o motor. Plataforma própria de IA, atendimento e email marketing operada por estrategistas. Mais de R$ 200 milhões em vendas operadas pela stack Fluxo.'
     });
 
     this.meta.updateTag({
       name: 'keywords',
       content:
-        'marketing digital para academias, agência marketing fitness, marketing para clínicas, marketing para pet shop, automação WhatsApp academia, CRM academia, retenção de alunos, churn academia, sistema gestão academia, marketing performance fitness'
+        'plataforma de marketing, IA para vendas, automação de atendimento, email marketing, growth marketing, marketing performance, agência de growth, marketing digital com tecnologia própria, alternativa V4 Company, alternativa Turbo Partners'
     });
 
-    // Open Graph
     this.meta.updateTag({
       property: 'og:title',
-      content: 'Fluxo Digital & Tech | Crescimento previsível para serviços recorrentes'
+      content: 'Fluxo Digital & Tech | A stack que vende'
     });
     this.meta.updateTag({
       property: 'og:description',
       content:
-        'Marketing + tecnologia para academias, clínicas e pet shops crescerem com previsibilidade. +38% de matrícula, -42% de churn em média.'
+        'Plataforma própria de IA + atendimento + email + dados, operada por estrategistas. Mais de R$ 200 milhões em vendas operadas.'
     });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:locale', content: 'pt_BR' });
 
-    // Twitter
     this.meta.updateTag({
       name: 'twitter:title',
-      content: 'Fluxo Digital & Tech | Crescimento previsível para serviços recorrentes'
+      content: 'Fluxo Digital & Tech | A stack que vende'
     });
     this.meta.updateTag({
       name: 'twitter:description',
-      content: 'Marketing e tecnologia para academias, clínicas e pet shops. Mais matrícula, menos churn.'
+      content: 'Plataforma própria de IA + atendimento + email. Operada por estrategistas. +R$ 200M em vendas.'
     });
   }
 

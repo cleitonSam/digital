@@ -1,49 +1,88 @@
 <section class="hero" aria-labelledby="hero-heading">
   <div id="hero-particles" class="hero-particles" aria-hidden="true"></div>
 
-  <div class="hero-content">
-    <!-- Eyebrow / vertical chips -->
-    <div class="hero-eyebrow" aria-label="Setores que atendemos">
-      <span class="chip">Academias</span>
-      <span class="chip">Clínicas &amp; Estética</span>
-      <span class="chip">Pet &amp; Vet</span>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-eyebrow" aria-label="Posicionamento">
+        <span class="dot"></span>
+        <span>STACK PRÓPRIA · IA · ATENDIMENTO · EMAIL · DADOS</span>
+      </div>
+
+      <h1 id="hero-heading">
+        Não somos agência.<br>
+        <span class="accent">Somos o motor</span><br>
+        de quem vende.
+      </h1>
+
+      <p class="hero-sub">
+        Plataforma própria de IA, atendimento e email marketing —
+        operada por estrategistas. Enquanto V4 e Turbo revendem ferramentas,
+        a Fluxo entrega a tecnologia <strong>e</strong> o time que vende.
+      </p>
+
+      <div class="hero-buttons">
+        <a (click)="scrollTo('cta')"
+           class="btn btn-primary"
+           role="button"
+           aria-label="Solicitar diagnóstico gratuito">
+          <span>Quero o motor →</span>
+        </a>
+
+        <a (click)="scrollTo('stack')"
+           class="btn btn-ghost"
+           role="button"
+           aria-label="Conhecer a stack">
+          <span>Ver a stack</span>
+        </a>
+      </div>
+
+      <p class="hero-microcopy">
+        Diagnóstico de 30 minutos · Sem proposta empurrada · Você sai com 3 alavancas pra aplicar
+      </p>
     </div>
 
-    <h1 id="hero-heading">
-      Mais clientes recorrentes.<br>
-      Menos churn. <span class="accent">Crescimento previsível.</span>
-    </h1>
-
-    <p>
-      Stack completo de marketing e tecnologia para negócios de serviço recorrente
-      que querem parar de perder cliente e crescer com dados — não com promessa.
-    </p>
-
-    <!-- Microprova -->
-    <ul class="hero-proof" aria-label="Resultados médios dos nossos clientes">
-      <li><strong>+38%</strong> de novas matrículas / agendamentos</li>
-      <li><strong>-42%</strong> de churn no segundo ciclo</li>
-      <li><strong>4.9/5</strong> de satisfação dos donos atendidos</li>
-    </ul>
-
-    <div class="hero-buttons">
-      <a (click)="scrollTo('cta')"
-         class="btn btn-primary"
-         role="button"
-         aria-label="Solicitar diagnóstico gratuito de 30 minutos">
-        <span>Diagnóstico gratuito de 30 min →</span>
-      </a>
-
-      <a (click)="scrollTo('about')"
-         class="btn btn-ghost"
-         role="button"
-         aria-label="Ver cases reais com números">
-        <span>Ver cases com números</span>
-      </a>
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-numbers">
+        <div class="num-block num-large">
+          <span class="num-value">+R$ 200M</span>
+          <span class="num-label">em vendas operadas pela stack</span>
+        </div>
+        <div class="num-row">
+          <div class="num-block">
+            <span class="num-value">+38%</span>
+            <span class="num-label">receita média / 90d</span>
+          </div>
+          <div class="num-block">
+            <span class="num-value">-42%</span>
+            <span class="num-label">churn médio</span>
+          </div>
+        </div>
+        <div class="num-row">
+          <div class="num-block">
+            <span class="num-value">< 5min</span>
+            <span class="num-label">resposta de lead</span>
+          </div>
+          <div class="num-block">
+            <span class="num-value">24/7</span>
+            <span class="num-label">IA operando</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <p class="hero-microcopy">
-      Sem compromisso. Em 30 minutos você sai com 3 alavancas claras pra aplicar no seu negócio.
-    </p>
+  <div class="hero-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>VENDAS PREVISÍVEIS</span><span class="sep">●</span>
+      <span>IA QUE QUALIFICA</span><span class="sep">●</span>
+      <span>ATENDIMENTO 24/7</span><span class="sep">●</span>
+      <span>EMAIL QUE CONVERTE</span><span class="sep">●</span>
+      <span>DADO QUE DECIDE</span><span class="sep">●</span>
+      <span>VENDAS PREVISÍVEIS</span><span class="sep">●</span>
+      <span>IA QUE QUALIFICA</span><span class="sep">●</span>
+      <span>ATENDIMENTO 24/7</span><span class="sep">●</span>
+      <span>EMAIL QUE CONVERTE</span><span class="sep">●</span>
+      <span>DADO QUE DECIDE</span><span class="sep">●</span>
+    </div>
   </div>
 </section>

@@ -10,17 +10,18 @@ import { NgFor } from '@angular/common';
   imports: [NgFor]
 })
 export class AboutComponent implements OnInit {
+  // Logos genéricos — substitua pelos clientes reais
   clients = [
-    { name: 'Academia Premium', logo: 'https://i.imgur.com/lN0LTy9.jpeg' },
-    { name: 'Fitness Total', logo: 'https://i.imgur.com/flQuzEs.png' },
-    { name: 'Gym Evolution', logo: 'https://i.imgur.com/gKYAGiY.png' },
-    { name: 'Power Club', logo: 'https://i.imgur.com/Nm0hyK5.png' },
-    { name: 'Body Tech', logo: 'https://i.imgur.com/Jc0OiiJ.png' },
-    { name: 'Smart Fit', logo: 'https://i.imgur.com/UJWueVv.png' },
-    { name: 'Bio Ritmo', logo: 'https://i.imgur.com/gm8QORO.png' },
-    { name: 'Blue Fitness', logo: 'https://i.imgur.com/GHG39rh.png' },
-    { name: 'Blue Fitness', logo: 'https://i.imgur.com/GdOU1P4.png' },
-    { name: 'Blue Fitness', logo: 'https://i.imgur.com/k9AL8hI.png' }
+    { name: 'Cliente 1', logo: 'https://i.imgur.com/lN0LTy9.jpeg' },
+    { name: 'Cliente 2', logo: 'https://i.imgur.com/flQuzEs.png' },
+    { name: 'Cliente 3', logo: 'https://i.imgur.com/gKYAGiY.png' },
+    { name: 'Cliente 4', logo: 'https://i.imgur.com/Nm0hyK5.png' },
+    { name: 'Cliente 5', logo: 'https://i.imgur.com/Jc0OiiJ.png' },
+    { name: 'Cliente 6', logo: 'https://i.imgur.com/UJWueVv.png' },
+    { name: 'Cliente 7', logo: 'https://i.imgur.com/gm8QORO.png' },
+    { name: 'Cliente 8', logo: 'https://i.imgur.com/GHG39rh.png' },
+    { name: 'Cliente 9', logo: 'https://i.imgur.com/GdOU1P4.png' },
+    { name: 'Cliente 10', logo: 'https://i.imgur.com/k9AL8hI.png' }
   ];
 
   duplicatedClients: any[] = [];

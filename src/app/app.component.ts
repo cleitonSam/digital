@@ -1,16 +1,15 @@
 import { Component, OnInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
 import { CtaComponent } from './components/cta/cta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
-import { IntegrationsComponent } from './components/integrations/integrations.component';
 import { MethodologyComponent } from './components/methodology/methodology.component';
 import { ServicesComponent } from './components/services/services.component';
+import { StackComponent } from './components/stack/stack.component';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +17,9 @@ import { ServicesComponent } from './components/services/services.component';
     HeaderComponent,
     FooterComponent,
     HeroComponent,
+    StackComponent,
     AboutComponent,
     ServicesComponent,
-    IntegrationsComponent,
     BenefitsComponent,
     MethodologyComponent,
     CtaComponent
@@ -44,22 +43,18 @@ export class AppComponent implements OnInit {
   }
 
   private loadChatwootScript(): void {
-    // Garantir que está rodando no navegador
     if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
-    // Verifica se o script já está presente
-    if (document.querySelector('script[src*="chat.fluxodigitaltech.com.br"]')) {
+    if (document.querySelector('script[src*="canal.fluxodigitaltech.com.br"]')) {
       return;
     }
 
-    // Define configurações
     (window as any).chatwootSettings = {
       position: 'right',
       type: 'standard',
       launcherTitle: 'Fale conosco no chat'
     };
 
-    // Cria e injeta o script
     const script = this.renderer.createElement('script');
     script.src = 'https://canal.fluxodigitaltech.com.br/packs/js/sdk.js';
     script.defer = true;

@@ -13,34 +13,34 @@ import { Benefit } from '../../models/benefit.model';
 export class BenefitsComponent implements OnInit {
   benefits: Benefit[] = [
     {
-      icon: 'fas fa-user-plus',
-      title: '+38% novas matrículas',
-      description: 'Funil de mídia + landing pages + automação de visita transformam clique em cliente. Resultado médio dos clientes Fluxo nos 90 primeiros dias.'
+      icon: 'fas fa-rocket',
+      title: '+38% de receita em 90 dias',
+      description: 'Média dos clientes Fluxo no primeiro trimestre rodando a stack completa. Mídia, IA, atendimento e email operando juntos.'
     },
     {
       icon: 'fas fa-shield-heart',
       title: '-42% de churn',
-      description: 'Detectamos cliente em risco antes do cancelamento. Régua de retenção via WhatsApp recupera quem ia embora — sem desconto agressivo.'
+      description: 'A IA detecta cliente em risco antes do cancelamento. A régua de retenção via WhatsApp recupera quem ia embora — sem desconto agressivo.'
     },
     {
-      icon: 'fas fa-stopwatch',
-      title: 'Resposta em < 5 min',
-      description: 'Lead que demora 30 minutos pra ser respondido vira concorrente. WhatsApp inteligente da Fluxo responde 24/7 com humano só quando precisa.'
+      icon: 'fas fa-bolt',
+      title: 'Resposta de lead em < 5 min',
+      description: 'Lead que demora 30 minutos pra ser respondido vira concorrente. A stack responde 24/7 com IA e passa pra humano só quando precisa.'
     },
     {
-      icon: 'fas fa-chart-pie',
-      title: 'Ticket médio +24%',
-      description: 'Upsell estruturado de plano anual, modalidades extras, produtos. Mesmo cliente, mais receita. Sem virar chato no atendimento.'
+      icon: 'fas fa-coins',
+      title: 'Fim das mensalidades fragmentadas',
+      description: 'Sem RD Station, sem ActiveCampaign, sem Manychat, sem Zendesk. Uma fatura, uma stack, uma conta — sobra dinheiro pra investir em mídia.'
     },
     {
-      icon: 'fas fa-tachometer-alt',
+      icon: 'fas fa-eye',
       title: 'Decisão com dado, não achismo',
-      description: 'Dashboard único integra sua agenda, CRM, redes sociais e mídia paga. Você abre o celular e sabe se a semana foi verde ou vermelha.'
+      description: 'Dashboard único integra mídia, atendimento, email e CRM. Você abre o celular e sabe se a semana foi verde ou vermelha.'
     },
     {
       icon: 'fas fa-handshake',
-      title: 'Parceria com pele no jogo',
-      description: 'Operamos junto com sua equipe, com reunião semanal de números. Sem terceirizada que some. KPI compartilhado, time só.'
+      title: 'Pele no jogo, KPI compartilhado',
+      description: 'Operamos junto com seu time, com reunião semanal de número. Sem agência terceirizada que some. Se você não cresce, a gente não fatura.'
     }
   ];
 
@@ -60,16 +60,7 @@ export class BenefitsComponent implements OnInit {
     this.meta.updateTag({
       name: 'description',
       content:
-        '+38% de matrícula, -42% de churn, ticket médio +24%. Os resultados médios dos clientes da Fluxo Digital & Tech em academias, clínicas e pet shops.'
-    });
-
-    this.meta.updateTag({
-      property: 'og:title',
-      content: 'Resultados que falam por nós — Fluxo Digital & Tech'
-    });
-    this.meta.updateTag({
-      property: 'og:description',
-      content: 'Veja como o stack da Fluxo move o ponteiro de matrícula, retenção e ticket no seu negócio.'
+        '+38% de receita, -42% de churn, resposta < 5 min, fim das mensalidades fragmentadas. Os resultados médios de quem opera com a stack Fluxo.'
     });
   }
 

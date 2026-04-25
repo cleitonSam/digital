@@ -26,23 +26,22 @@ export class CtaComponent {
     const data = new FormData(form);
     const nome = (data.get('nome') as string) || '';
     const empresa = (data.get('empresa') as string) || '';
-    const setor = (data.get('setor') as string) || '';
+    const faturamento = (data.get('faturamento') as string) || '';
     const whats = (data.get('whatsapp') as string) || '';
 
     const msg =
       `Olá Fluxo! Quero meu diagnóstico gratuito.%0A%0A` +
       `Nome: ${encodeURIComponent(nome)}%0A` +
-      `Negócio: ${encodeURIComponent(empresa)}%0A` +
-      `Setor: ${encodeURIComponent(setor)}%0A` +
+      `Empresa: ${encodeURIComponent(empresa)}%0A` +
+      `Faturamento: ${encodeURIComponent(faturamento)}%0A` +
       `WhatsApp: ${encodeURIComponent(whats)}`;
 
     const url = `https://wa.me/${this.whatsappNumber}?text=${msg}`;
 
-    // Disparo de evento de conversão para GTM/GA4
     if ((window as any).dataLayer) {
       (window as any).dataLayer.push({
         event: 'lead_diagnostico',
-        setor,
+        faturamento,
         empresa
       });
     }

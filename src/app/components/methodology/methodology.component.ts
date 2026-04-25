@@ -15,27 +15,27 @@ export class MethodologyComponent implements OnInit {
     {
       number: 1,
       title: 'Diagnóstico (30 min)',
-      description: 'Olhamos seus números reais — churn, ticket, ciclo de cliente, custo de aquisição. Saímos com 3 alavancas concretas. Sem proposta vazia.'
+      description: 'Olhamos seus números reais — receita, CAC, churn, ticket. Saímos com 3 alavancas concretas. Sem proposta empurrada, sem reunião teórica.'
     },
     {
       number: 2,
-      title: 'Plano com KPI',
-      description: 'Plano de 90 dias com meta clara: matrícula, agendamento, retenção. Definimos os indicadores que vão nos cobrar — incluindo nós.'
+      title: 'Plano com KPI compartilhado',
+      description: 'Plano de 90 dias com meta clara: receita, leads, conversão. Definimos os indicadores que vão nos cobrar — e que vão te pagar bônus quando bater.'
     },
     {
       number: 3,
-      title: 'Implantação do stack',
-      description: 'Dashboard, WhatsApp automatizado, CRM e funil de mídia ligados ao seu sistema. Treinamento da equipe. Tudo testado em ambiente real.'
+      title: 'Implantação da stack',
+      description: 'IA, atendimento, email, mídia — tudo plugado em 14 dias. Sem fila, sem reunião pra decidir cor de botão. Treinamento da equipe incluso.'
     },
     {
       number: 4,
-      title: 'Ritmo de operação',
-      description: 'Reunião semanal de números. Otimização contínua de criativos, copy e funil. Você fica no negócio — a Fluxo opera o motor.'
+      title: 'Ritmo semanal de operação',
+      description: 'Reunião de número toda semana. Otimização contínua de criativos, copy, funil e mídia. Você cuida do produto. A Fluxo opera o motor.'
     },
     {
       number: 5,
-      title: 'Escala e expansão',
-      description: 'Quando o motor estiver previsível, ajudamos a abrir nova unidade, lançar nova modalidade ou escalar mídia. Crescimento sem caos.'
+      title: 'Escala previsível',
+      description: 'Quando o motor estiver rodando previsível, ajudamos a abrir nova frente, lançar produto novo ou multiplicar mídia. Crescimento sem caos.'
     }
   ];
 
@@ -50,21 +50,12 @@ export class MethodologyComponent implements OnInit {
   }
 
   private setMetaTags(): void {
-    this.title.setTitle('Metodologia de Growth — Fluxo Digital & Tech');
+    this.title.setTitle('Como a Fluxo opera — Metodologia');
 
     this.meta.updateTag({
       name: 'description',
       content:
-        'Diagnóstico, plano com KPI, stack tecnológico, ritmo semanal e expansão. A metodologia da Fluxo para crescimento previsível em serviços recorrentes.'
-    });
-
-    this.meta.updateTag({
-      property: 'og:title',
-      content: 'Metodologia de Growth comprovada — Fluxo Digital & Tech'
-    });
-    this.meta.updateTag({
-      property: 'og:description',
-      content: '5 etapas para sair do achismo e crescer com previsibilidade no seu setor.'
+        'Diagnóstico, plano com KPI compartilhado, implantação da stack em 14 dias, ritmo semanal e escala previsível. Como a Fluxo opera o motor de growth.'
     });
   }
 
