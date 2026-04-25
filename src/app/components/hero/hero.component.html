@@ -1,88 +1,106 @@
 <section class="hero" aria-labelledby="hero-heading">
-  <div id="hero-particles" class="hero-particles" aria-hidden="true"></div>
+  <div class="hero-inner container">
 
-  <div class="hero-grid">
-    <div class="hero-left">
-      <div class="hero-eyebrow" aria-label="Posicionamento">
-        <span class="dot"></span>
-        <span>STACK PRÓPRIA · IA · ATENDIMENTO · EMAIL · DADOS</span>
-      </div>
+    <span class="eyebrow">
+      <span class="pulse"></span>
+      Stack proprietária · IA · Atendimento · Email · Dados
+    </span>
 
-      <h1 id="hero-heading">
-        Não somos agência.<br>
-        <span class="accent">Somos o motor</span><br>
-        de quem vende.
-      </h1>
+    <h1 id="hero-heading" class="display">
+      Não somos<br>
+      agência. <span class="accent">Somos</span><br>
+      <span class="accent">o motor</span> de quem<br>
+      vende.
+    </h1>
 
-      <p class="hero-sub">
-        Plataforma própria de IA, atendimento e email marketing —
-        operada por estrategistas. Enquanto V4 e Turbo revendem ferramentas,
-        a Fluxo entrega a tecnologia <strong>e</strong> o time que vende.
-      </p>
+    <p class="hero-lead">
+      Plataforma própria de inteligência artificial, atendimento
+      omnichannel e email marketing — operada por estrategistas.
+      Enquanto outros revendem RD&nbsp;Station, Mailchimp e Zendesk,
+      a Fluxo é dona da tecnologia.
+    </p>
 
-      <div class="hero-buttons">
-        <a (click)="scrollTo('cta')"
-           class="btn btn-primary"
-           role="button"
-           aria-label="Solicitar diagnóstico gratuito">
-          <span>Quero o motor →</span>
-        </a>
+    <div class="hero-actions">
+      <a (click)="scrollTo('cta')" class="btn btn-primary btn-arrow"
+         role="button" aria-label="Solicitar diagnóstico gratuito">
+        Quero o motor
+      </a>
 
-        <a (click)="scrollTo('stack')"
-           class="btn btn-ghost"
-           role="button"
-           aria-label="Conhecer a stack">
-          <span>Ver a stack</span>
-        </a>
-      </div>
-
-      <p class="hero-microcopy">
-        Diagnóstico de 30 minutos · Sem proposta empurrada · Você sai com 3 alavancas pra aplicar
-      </p>
+      <a (click)="scrollTo('stack')" class="btn btn-ghost"
+         role="button" aria-label="Conhecer a stack">
+        Conhecer a stack
+      </a>
     </div>
 
-    <div class="hero-right" aria-hidden="true">
-      <div class="hero-numbers">
-        <div class="num-block num-large">
-          <span class="num-value">+R$ 200M</span>
-          <span class="num-label">em vendas operadas pela stack</span>
-        </div>
-        <div class="num-row">
-          <div class="num-block">
-            <span class="num-value">+38%</span>
-            <span class="num-label">receita média / 90d</span>
-          </div>
-          <div class="num-block">
-            <span class="num-value">-42%</span>
-            <span class="num-label">churn médio</span>
-          </div>
-        </div>
-        <div class="num-row">
-          <div class="num-block">
-            <span class="num-value">< 5min</span>
-            <span class="num-label">resposta de lead</span>
-          </div>
-          <div class="num-block">
-            <span class="num-value">24/7</span>
-            <span class="num-label">IA operando</span>
-          </div>
-        </div>
-      </div>
+    <div class="hero-meta">
+      <span class="mono">— Diagnóstico de 30 min · sem proposta empurrada</span>
+    </div>
+
+    <!-- Right side abstract element -->
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="hero-art-svg">
+        <defs>
+          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#0066ff" stop-opacity="0.2"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Outer ring -->
+        <circle cx="200" cy="200" r="180"
+                fill="none" stroke="url(#ringGrad)" stroke-width="1"
+                stroke-dasharray="3 5" class="ring ring-outer"/>
+
+        <!-- Mid ring -->
+        <circle cx="200" cy="200" r="130"
+                fill="none" stroke="#00f2fe" stroke-width="1"
+                stroke-opacity="0.4" class="ring ring-mid"/>
+
+        <!-- Inner ring solid -->
+        <circle cx="200" cy="200" r="80"
+                fill="none" stroke="#00f2fe" stroke-width="1.5"
+                class="ring ring-inner"/>
+
+        <!-- Cross lines -->
+        <line x1="20" y1="200" x2="380" y2="200"
+              stroke="#00f2fe" stroke-width="0.5" stroke-opacity="0.2"/>
+        <line x1="200" y1="20" x2="200" y2="380"
+              stroke="#00f2fe" stroke-width="0.5" stroke-opacity="0.2"/>
+
+        <!-- Center dot -->
+        <circle cx="200" cy="200" r="4" fill="#00f2fe"/>
+
+        <!-- Orbiting dots -->
+        <circle cx="200" cy="20" r="3" fill="#00f2fe" class="orbit-dot orbit-1"/>
+        <circle cx="380" cy="200" r="3" fill="#00f2fe" class="orbit-dot orbit-2"/>
+        <circle cx="200" cy="380" r="3" fill="#0066ff" class="orbit-dot orbit-3"/>
+      </svg>
     </div>
   </div>
 
+  <!-- Marquee bottom -->
   <div class="hero-marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>VENDAS PREVISÍVEIS</span><span class="sep">●</span>
-      <span>IA QUE QUALIFICA</span><span class="sep">●</span>
-      <span>ATENDIMENTO 24/7</span><span class="sep">●</span>
-      <span>EMAIL QUE CONVERTE</span><span class="sep">●</span>
-      <span>DADO QUE DECIDE</span><span class="sep">●</span>
-      <span>VENDAS PREVISÍVEIS</span><span class="sep">●</span>
-      <span>IA QUE QUALIFICA</span><span class="sep">●</span>
-      <span>ATENDIMENTO 24/7</span><span class="sep">●</span>
-      <span>EMAIL QUE CONVERTE</span><span class="sep">●</span>
-      <span>DADO QUE DECIDE</span><span class="sep">●</span>
+      <span>Vendas previsíveis</span>
+      <span class="dot">●</span>
+      <span>IA que qualifica</span>
+      <span class="dot">●</span>
+      <span>Atendimento 24/7</span>
+      <span class="dot">●</span>
+      <span>Email que converte</span>
+      <span class="dot">●</span>
+      <span>Dado que decide</span>
+      <span class="dot">●</span>
+      <span>Vendas previsíveis</span>
+      <span class="dot">●</span>
+      <span>IA que qualifica</span>
+      <span class="dot">●</span>
+      <span>Atendimento 24/7</span>
+      <span class="dot">●</span>
+      <span>Email que converte</span>
+      <span class="dot">●</span>
+      <span>Dado que decide</span>
+      <span class="dot">●</span>
     </div>
   </div>
 </section>

@@ -1,43 +1,44 @@
-<section id="stack" class="stack-section" aria-labelledby="stack-heading">
-  <div class="stack-container">
+<section id="stack" class="stack-section section section-bg-1" aria-labelledby="stack-heading">
+  <div class="container">
+
     <div class="stack-header">
-      <span class="stack-eyebrow">A STACK</span>
+      <span class="eyebrow">A stack</span>
       <h2 id="stack-heading">
         Três plataformas próprias.<br>
-        <span class="accent">Um só motor de vendas.</span>
+        <span class="accent">Um motor.</span>
       </h2>
-      <p class="stack-lead">
-        Enquanto outras agências revendem RD Station, Mailchimp ou Zendesk,
-        a Fluxo opera ferramentas que <strong>desenvolvemos e somos donos</strong>.
-        Margem maior, integração total, lock-in real.
+      <p class="lead">
+        V4 e Turbo revendem RD&nbsp;Station, Mailchimp e Zendesk. A Fluxo
+        desenvolveu — e é dona — de toda a stack que entrega.
       </p>
     </div>
 
     <div class="stack-list">
-      <article class="stack-card" *ngFor="let item of items; trackBy: trackByItem; let i = index">
-        <div class="stack-card-header">
-          <span class="stack-badge">{{ item.badge }}</span>
+      <article class="stack-item"
+               *ngFor="let item of items; trackBy: trackByItem; let i = index">
+        <div class="stack-item-meta">
+          <span class="stack-num mono">{{ '0' + (i + 1) }}</span>
+          <span class="stack-label mono">{{ item.subtitle }}</span>
         </div>
 
-        <div class="stack-card-body">
-          <div class="stack-card-text">
-            <h3>{{ item.title }}</h3>
-            <p class="stack-subtitle">{{ item.subtitle }}</p>
-            <p class="stack-description">{{ item.description }}</p>
-            <ul class="stack-features">
-              <li *ngFor="let f of item.features">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                {{ f }}
-              </li>
-            </ul>
-          </div>
+        <div class="stack-item-content">
+          <h3>{{ item.title }}</h3>
+          <p class="stack-item-desc">{{ item.description }}</p>
 
-          <div class="stack-card-number">
-            <span class="big">{{ item.number }}</span>
-            <span class="small">{{ item.numberLabel }}</span>
-          </div>
+          <ul class="stack-features">
+            <li *ngFor="let f of item.features">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 7L6 10L11 4" stroke="currentColor"
+                      stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {{ f }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="stack-item-stat">
+          <span class="stat-value">{{ item.number }}</span>
+          <span class="stat-label">{{ item.numberLabel }}</span>
         </div>
       </article>
     </div>

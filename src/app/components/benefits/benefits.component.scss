@@ -1,50 +1,84 @@
-$primary: #0066ff;
-$primary-dark: #0052cc;
-$secondary: #00f2fe;
-$secondary-dark: #00d9e6;
-$dark: #0f172a;
-$darker: #020617;
-$light: #f8fafc;
-$gray: #94a3b8;
-$success: #10b981;
+/* ============================================
+   BENEFITS — Number-first tiles
+   ============================================ */
 
-$gradient: linear-gradient(135deg, $primary, $secondary);
+.benefits-section {
+  position: relative;
+}
+
+.benefits-header {
+  margin-bottom: var(--s-7);
+  max-width: 720px;
+
+  .eyebrow {
+    margin-bottom: var(--s-3);
+  }
+
+  h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    margin-bottom: var(--s-3);
+
+    .accent {
+      color: var(--cyan);
+    }
+  }
+
+  .lead {
+    color: var(--text-1);
+  }
+}
 
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 0;
+  border-top: 1px solid var(--border-0);
+  border-left: 1px solid var(--border-0);
+
+  @media (max-width: 768px) {
+    border-left: none;
+  }
 }
 
-.benefit-card {
-  text-align: center;
-  padding: 40px 30px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+.benefit-tile {
+  padding: var(--s-5);
+  border-right: 1px solid var(--border-0);
+  border-bottom: 1px solid var(--border-0);
+  transition: background var(--t-fast) var(--ease);
+  position: relative;
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 242, 254, 0.02);
   }
 
-  i {
-    font-size: 60px;
-    margin-bottom: 25px;
-    background: $gradient;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  @media (max-width: 768px) {
+    border-right: none;
   }
+}
 
-  h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: $dark;
-  }
+.benefit-num {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--s-3);
+  font-weight: 500;
+}
 
-  p {
-    color: #555;
-  }
+.benefit-tile h3 {
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--cyan);
+  margin-bottom: var(--s-2);
+  font-weight: 700;
+}
+
+.benefit-tile p {
+  color: var(--text-1);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
 }

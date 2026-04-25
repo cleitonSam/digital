@@ -1,16 +1,30 @@
-<section id="methodology" class="section methodology">
+<section id="methodology" class="methodology section section-bg-0">
   <div class="container">
-    <div class="section-title">
-      <span class="eyebrow">COMO OPERAMOS</span>
-      <h2>Do diagnóstico ao motor previsível</h2>
-      <p>Sem mistério, sem reunião teórica, sem PowerPoint de 80 páginas. A Fluxo opera o motor enquanto você cuida do que importa: produto e cliente.</p>
-    </div>
-    <div class="methodology-steps">
-      <div class="step" *ngFor="let step of steps; trackBy: trackByStep">
-        <div class="step-number">{{ step.number }}</div>
-        <h3>{{ step.title }}</h3>
-        <p>{{ step.description }}</p>
+    <div class="methodology-grid">
+
+      <div class="methodology-intro">
+        <span class="eyebrow">Como operamos</span>
+        <h2>
+          Do diagnóstico<br>
+          ao motor<br>
+          <span class="accent">previsível.</span>
+        </h2>
+        <p class="lead">
+          Sem reunião teórica, sem PowerPoint de 80 páginas.
+          Cinco etapas. Quatorze dias para a stack rodar.
+        </p>
       </div>
+
+      <ol class="methodology-list">
+        <li class="methodology-step" *ngFor="let step of steps; trackBy: trackByStep">
+          <span class="step-num mono">{{ step.number < 10 ? '0' + step.number : step.number }}</span>
+          <div class="step-body">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+        </li>
+      </ol>
+
     </div>
   </div>
 </section>

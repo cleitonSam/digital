@@ -1,54 +1,54 @@
-<section id="about" class="section about-section">
+<section id="about" class="about-section section section-bg-1">
   <div class="container">
-    <div class="section-title">
-      <span class="eyebrow">QUEM ESTÁ DO OUTRO LADO</span>
-      <h2>Operadores que viraram donos do motor</h2>
-      <p>A Fluxo nasceu da exaustão de ver clientes pagando 3 fornecedores diferentes pra fazer o que uma stack integrada deveria fazer. Construímos a nossa.</p>
-    </div>
 
-    <div class="about-content">
-      <div class="about-text">
-        <h3>Por que somos diferentes da V4 e da Turbo</h3>
+    <div class="about-grid">
+      <div class="about-side">
+        <span class="eyebrow">Quem está do outro lado</span>
+        <p class="about-mark mono">— Fluxo Digital &amp; Tech, desde 2020</p>
+      </div>
 
-        <p class="highlight">
-          As outras assessorias <strong>revendem</strong> tecnologia. RD Station, Mailchimp,
-          Zendesk, Manychat. Cada ferramenta cobra mensalidade, cada uma tem um login, cada
-          uma fala uma língua. A integração é o problema do cliente.
+      <div class="about-main">
+        <h2>
+          Operadores que cansaram de ver clientes pagando<br>
+          <span class="accent">três fornecedores diferentes</span><br>
+          pra fazer o que uma stack só deveria fazer.
+        </h2>
+
+        <p class="about-text">
+          A Fluxo nasceu da exaustão de implementar marketing usando ferramentas que não
+          conversam. RD Station de um lado, Mailchimp de outro, Manychat para WhatsApp,
+          Zendesk para suporte. Cada uma cobrando mensalidade. Cada uma com login próprio.
+          A integração era sempre problema do cliente.
         </p>
 
-        <p>
-          A Fluxo <strong>desenvolveu</strong> a stack do zero — IA, atendimento, email, dados — e
-          opera tudo internamente. Para você isso significa: <strong>uma fatura</strong>,
-          <strong>um time</strong>, <strong>um motor</strong>. E margem que só quem é dono
-          tem condição de devolver para o cliente em forma de resultado.
+        <p class="about-text">
+          Construímos a stack do zero — IA, atendimento, email, dados — e operamos tudo
+          internamente. Para o cliente isso significa <strong>uma fatura, um time, um motor</strong>.
+          E margem que só quem é dono tem condição de devolver em forma de resultado.
         </p>
 
-        <div class="pillars">
-          <div class="pillar-card">
-            <i class="fas fa-microchip"></i>
-            <h4>Donos da tecnologia</h4>
+        <div class="about-pillars">
+          <div class="about-pillar">
+            <span class="mono">— 01</span>
+            <h3>Donos da tecnologia</h3>
             <p>Não revendemos SaaS de ninguém. Cada plataforma da stack é nossa — código próprio, roadmap próprio, controle total.</p>
           </div>
-
-          <div class="pillar-card">
-            <i class="fas fa-bolt"></i>
-            <h4>Velocidade de operador</h4>
+          <div class="about-pillar">
+            <span class="mono">— 02</span>
+            <h3>Velocidade de operador</h3>
             <p>Sem comitê. Sem reunião pra marcar reunião. Detectamos um problema às 9h, deployamos a correção até as 14h.</p>
           </div>
-
-          <div class="pillar-card">
-            <i class="fas fa-balance-scale"></i>
-            <h4>Pele no jogo</h4>
+          <div class="about-pillar">
+            <span class="mono">— 03</span>
+            <h3>Pele no jogo</h3>
             <p>KPI compartilhado, reunião semanal de número, contrato com gatilho de resultado. Se você não cresce, a gente não fatura.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="clients-section">
-      <h3>Empresas que rodam no nosso motor</h3>
-      <p class="clients-caption">Clientes que trocaram 4 fornecedores por uma stack só.</p>
-
+    <div class="clients-strip">
+      <p class="clients-mark mono">— Empresas que rodam no nosso motor</p>
       <div class="clients-carousel">
         <div class="clients-track" [style.animation-duration]="animationDuration">
           <div class="client-logo" *ngFor="let client of duplicatedClients">

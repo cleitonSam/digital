@@ -1,71 +1,50 @@
-$primary: #0066ff;
-$primary-dark: #0052cc;
-$secondary: #00f2fe;
-$secondary-dark: #00d9e6;
-$accent: #00d4ff;
-$dark: #0f172a;
-$darker: #020617;
-$light: #f8fafc;
-$gray: #94a3b8;
-$gray-light: #cbd5e1;
-$success: #10b981;
+/* ============================================
+   CTA — Editorial form, asymmetric
+   ============================================ */
 
-.cta {
-  background: linear-gradient(rgba($darker, 0.95), rgba($darker, 0.98)),
-              url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-  color: white;
-  padding: 100px 0;
+.cta-section {
   position: relative;
 }
 
 .cta-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 0.9fr;
+  gap: var(--s-7);
   align-items: start;
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: var(--s-5);
   }
 }
 
-.cta-copy {
+.cta-left {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+
+  @media (max-width: 992px) {
+    position: static;
+  }
+
   .eyebrow {
-    display: inline-block;
-    padding: 6px 14px;
-    border: 1px solid rgba($accent, 0.4);
-    color: $accent;
-    background: rgba($accent, 0.08);
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 22px;
+    margin-bottom: var(--s-3);
   }
 
   h2 {
-    font-size: 38px;
-    line-height: 1.15;
-    font-weight: 800;
-    margin-bottom: 20px;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    color: var(--text-0);
+    margin-bottom: var(--s-5);
 
-    @media (max-width: 768px) {
-      font-size: 28px;
+    .accent {
+      color: var(--cyan);
     }
-  }
-
-  p {
-    font-size: 17px;
-    line-height: 1.6;
-    color: $gray-light;
-    margin-bottom: 28px;
-    max-width: 520px;
   }
 }
 
-.cta-bullets {
+.cta-checklist {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -73,100 +52,107 @@ $success: #10b981;
   li {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-    color: $light;
+    gap: var(--s-2);
+    padding: var(--s-2) 0;
+    color: var(--text-1);
     font-size: 15px;
+    border-bottom: 1px solid var(--border-0);
 
-    i {
-      color: $success;
-      font-size: 18px;
+    &:last-child {
+      border-bottom: none;
+    }
+
+    svg {
+      flex-shrink: 0;
+      color: var(--cyan);
     }
   }
 }
 
+/* ===== FORM ===== */
 .cta-form {
-  background: rgba(white, 0.04);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba($accent, 0.15);
-  border-radius: 18px;
-  padding: 36px;
+  background: var(--surface);
+  border: 1px solid var(--border-0);
+  border-radius: var(--r-3);
+  padding: var(--s-5);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--s-3);
 
   @media (max-width: 576px) {
-    padding: 24px;
+    padding: var(--s-4);
   }
+}
 
-  h3 {
-    font-size: 22px;
-    font-weight: 700;
-    color: white;
-    margin: 0 0 8px 0;
-  }
+.cta-form-header {
+  margin-bottom: var(--s-2);
 
-  label {
-    display: flex;
-    flex-direction: column;
+  .mono {
+    color: var(--text-3);
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: $gray-light;
-    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.field input,
+.field select {
+  padding: 12px 14px;
+  background: var(--bg-1);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-1);
+  color: var(--text-0);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+
+  &::placeholder {
+    color: var(--text-3);
   }
 
-  input, select {
-    margin-top: 6px;
-    padding: 12px 14px;
-    background: rgba(white, 0.06);
-    border: 1px solid rgba(white, 0.12);
-    border-radius: 10px;
-    color: white;
-    font-size: 15px;
-    font-family: inherit;
-    transition: border-color 0.2s, background 0.2s;
-
-    &::placeholder {
-      color: rgba(white, 0.4);
-    }
-
-    &:focus {
-      outline: none;
-      border-color: $accent;
-      background: rgba(white, 0.08);
-    }
+  &:hover {
+    border-color: var(--border-cyan);
   }
 
-  select option {
-    background: $darker;
-    color: white;
+  &:focus {
+    outline: none;
+    border-color: var(--cyan);
+    background: var(--bg-2);
   }
+}
 
-  .btn-primary {
-    margin-top: 8px;
-    padding: 16px 22px;
-    background: $accent;
-    color: $darker;
-    font-weight: 700;
-    border-radius: 50px;
-    border: none;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.25s;
-    box-shadow: 0 6px 24px rgba($accent, 0.3);
+.field select option {
+  background: var(--bg-1);
+  color: var(--text-0);
+}
 
-    &:hover {
-      background: $secondary;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba($accent, 0.45);
-    }
-  }
+.cta-form .btn-primary {
+  margin-top: var(--s-2);
+  padding: 14px 22px;
+  font-size: 14px;
+  width: 100%;
+  justify-content: center;
+}
 
-  .cta-form-microcopy {
-    font-size: 12px;
-    color: rgba(white, 0.5);
-    margin: 6px 0 0 0;
-    text-align: center;
-  }
+.cta-form-foot {
+  font-size: 11px;
+  color: var(--text-3);
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.03em;
 }

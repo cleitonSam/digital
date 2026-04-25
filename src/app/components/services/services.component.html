@@ -1,20 +1,33 @@
-<section id="services" class="section services">
+<section id="services" class="services-section section section-bg-0">
   <div class="container">
-    <div class="section-title">
-      <span class="eyebrow">O QUE A FLUXO ENTREGA</span>
-      <h2>Cinco alavancas. Uma stack. Um resultado.</h2>
-      <p>Não vendemos serviço solto. Vendemos um motor inteiro — operação + tecnologia — pra fazer seu faturamento subir com previsibilidade.</p>
+    <div class="services-header">
+      <span class="eyebrow">O que entregamos</span>
+      <h2>Cinco alavancas. Uma stack.<br><span class="accent">Um resultado.</span></h2>
+      <p class="lead">
+        Operação + tecnologia em um só fornecedor. Sem mensalidades fragmentadas,
+        sem reunião pra integrar ferramenta de fornecedor diferente.
+      </p>
     </div>
 
     <div class="services-grid">
-      <div class="service-card" *ngFor="let service of orderedServices; trackBy: trackByService">
-        <i [class]="service.icon" aria-hidden="true"></i>
+      <article class="service-card"
+               *ngFor="let service of orderedServices; trackBy: trackByService; let i = index">
+        <span class="service-num mono">{{ '0' + (i + 1) }} / 0{{ orderedServices.length }}</span>
+
         <h3>{{ service.title }}</h3>
-        <ul>
+
+        <ul class="service-list">
           <li *ngFor="let item of service.items">{{ item }}</li>
         </ul>
-        <a [href]="service.link" class="btn" target="_blank" rel="noopener">{{ service.linkText }}</a>
-      </div>
+
+        <a [href]="service.link" class="service-link" target="_blank" rel="noopener">
+          {{ service.linkText }}
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
     </div>
   </div>
 </section>

@@ -1,16 +1,22 @@
-<section id="benefits" class="section" aria-labelledby="benefits-heading">
+<section id="benefits" class="benefits-section section section-bg-1" aria-labelledby="benefits-heading">
   <div class="container">
-    <div class="section-title">
-      <span class="eyebrow">O QUE MUDA NO SEU CAIXA</span>
-      <h2 id="benefits-heading">Resultado em número, não em adjetivo</h2>
-      <p>Médias reais dos clientes Fluxo nos primeiros 90 dias com a stack ativa.</p>
+    <div class="benefits-header">
+      <span class="eyebrow">Resultado</span>
+      <h2 id="benefits-heading">
+        Em número.<br>
+        <span class="accent">Não em adjetivo.</span>
+      </h2>
+      <p class="lead">
+        Médias reais dos clientes Fluxo nos primeiros 90 dias com a stack ativa.
+      </p>
     </div>
+
     <div class="benefits-grid" role="list">
-      <div class="benefit-card" *ngFor="let benefit of benefits; trackBy: trackByBenefit" role="listitem">
-        <i [class]="benefit.icon" aria-hidden="true"></i>
-        <h3>{{ benefit.title }}</h3>
-        <p>{{ benefit.description }}</p>
-      </div>
+      <article class="benefit-tile" *ngFor="let b of benefits; trackBy: trackByBenefit; let i = index" role="listitem">
+        <span class="benefit-num mono">0{{ i + 1 }}</span>
+        <h3>{{ b.title }}</h3>
+        <p>{{ b.description }}</p>
+      </article>
     </div>
   </div>
 </section>

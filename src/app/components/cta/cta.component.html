@@ -1,45 +1,66 @@
-<section id="cta" class="cta" aria-labelledby="cta-heading">
+<section id="cta" class="cta-section section section-bg-0" aria-labelledby="cta-heading">
   <div class="container">
+
     <div class="cta-grid">
-      <div class="cta-copy">
-        <span class="eyebrow">DIAGNÓSTICO GRATUITO · 30 MINUTOS</span>
+      <div class="cta-left">
+        <span class="eyebrow">Diagnóstico · 30 min · gratuito</span>
         <h2 id="cta-heading">
-          Em 30 minutos você sai com 3 alavancas pra <span class="accent">aplicar essa semana</span>.
+          Em 30 minutos<br>
+          você sai com<br>
+          <span class="accent">3 alavancas</span><br>
+          pra aplicar.
         </h2>
-        <p>
-          Sem proposta empurrada, sem PowerPoint genérico. Olhamos seus números reais —
-          receita, CAC, churn, ticket — e devolvemos onde está o dinheiro que você está
-          deixando na mesa hoje.
-        </p>
-        <ul class="cta-bullets">
-          <li><i class="fas fa-check-circle"></i> Análise dos seus números atuais</li>
-          <li><i class="fas fa-check-circle"></i> 3 alavancas concretas pra aplicar</li>
-          <li><i class="fas fa-check-circle"></i> Comparativo com o seu setor</li>
-          <li><i class="fas fa-check-circle"></i> Sem compromisso — você decide depois</li>
+
+        <ul class="cta-checklist">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Análise dos seus números reais
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            3 alavancas concretas pra aplicar
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Comparativo com o seu setor
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Sem proposta empurrada
+          </li>
         </ul>
       </div>
 
       <form class="cta-form"
             #diagForm
-            action="https://wa.me/5511920412220"
-            method="get"
-            target="_blank"
             (submit)="onSubmit($event, diagForm)"
             aria-label="Solicitar diagnóstico gratuito">
-        <h3>Quero meu diagnóstico</h3>
+        <div class="cta-form-header">
+          <span class="mono">— Quero meu diagnóstico</span>
+        </div>
 
-        <label>
-          Seu nome
-          <input type="text" name="nome" required autocomplete="name" placeholder="Como prefere ser chamado">
+        <label class="field">
+          <span class="field-label">Nome</span>
+          <input type="text" name="nome" required autocomplete="name"
+                 placeholder="Como prefere ser chamado">
         </label>
 
-        <label>
-          Empresa
-          <input type="text" name="empresa" required autocomplete="organization" placeholder="Nome do seu negócio">
+        <label class="field">
+          <span class="field-label">Empresa</span>
+          <input type="text" name="empresa" required autocomplete="organization"
+                 placeholder="Nome do seu negócio">
         </label>
 
-        <label>
-          Faturamento mensal atual
+        <label class="field">
+          <span class="field-label">Faturamento mensal atual</span>
           <select name="faturamento" required>
             <option value="">Selecione</option>
             <option value="Até R$ 50k/mês">Até R$ 50k/mês</option>
@@ -49,19 +70,21 @@
           </select>
         </label>
 
-        <label>
-          WhatsApp
-          <input type="tel" name="whatsapp" required pattern="[0-9\s\(\)\-\+]+" placeholder="(11) 9 9999-9999">
+        <label class="field">
+          <span class="field-label">WhatsApp</span>
+          <input type="tel" name="whatsapp" required pattern="[0-9\s\(\)\-\+]+"
+                 placeholder="(11) 9 9999-9999">
         </label>
 
-        <button type="submit" class="btn btn-primary">
-          <span>Receber diagnóstico no WhatsApp →</span>
+        <button type="submit" class="btn btn-primary btn-arrow">
+          Receber diagnóstico no WhatsApp
         </button>
 
-        <p class="cta-form-microcopy">
-          Resposta em até 1 dia útil. Seus dados ficam só com a Fluxo.
+        <p class="cta-form-foot mono">
+          Resposta em até 1 dia útil. Sem spam, sem corretora.
         </p>
       </form>
     </div>
+
   </div>
 </section>
